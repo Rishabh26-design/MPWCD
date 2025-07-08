@@ -239,6 +239,10 @@ body.hindi-active [lang="hi"] {
     /* Slightly darker on hover */
     transform: translateY(-3px);
 }
+.img-outline {
+      outline: 2px solid #b6b6b6;
+      outline-offset: 2px;
+    }
 
 
 
