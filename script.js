@@ -127,94 +127,91 @@ document.addEventListener('click', function (e) {
     }
 });
 
-// Sample data for the galleries
-const galleryData = {
-    images: [
-        "asset/Gallary/A.jpeg",
-        "asset/Gallary/B.jpeg",
-        "asset/Gallary/C.jpeg",
-        "asset/Gallary/D.jpeg",
-        "asset/Gallary/E.jpeg",
-        "asset/Gallary/F.jpeg",
-        "asset/Gallary/G.jpeg",
-        "asset/Gallary/H.jpeg"
-    ],
-    videos: [
-        {
-            thumbnail: "https://i.ytimg.com/vi/7wtfhZwyrcc/maxresdefault.jpg",
-            src: "https://www.youtube.com/live/oZi4zQ9dWiU?si=qaggLm21rwmHe-Ly",
-            embedUrl: "https://www.youtube.com/embed/oZi4zQ9dWiU?si=9faOd2X3jAHIbxL0"
-        },
-        {
-            thumbnail: "asset/Gallary/I.jpeg",
-            src: "https://www.youtube.com/live/oZi4zQ9dWiU?si=qaggLm21rwmHe-Ly",
-            embedUrl: "https://www.youtube.com/embed/oZi4zQ9dWiU?si=9faOd2X3jAHIbxL0"
-        },
-        {
-            thumbnail: "https://i.ytimg.com/vi/9bZkp7q19f0/maxresdefault.jpg",
-            src: "https://www.youtube.com/live/oZi4zQ9dWiU?si=qaggLm21rwmHe-Ly",
-            embedUrl: "https://www.youtube.com/embed/oZi4zQ9dWiU?si=9faOd2X3jAHIbxL0"
+    // Sample data for the galleries
+    const galleryData = {
+        images: [
+            "asset/Gallary/A.jpeg",
+            "asset/Gallary/B.jpeg",
+            "asset/Gallary/C.jpeg",
+            "asset/Gallary/D.jpeg",
+            "asset/Gallary/E.jpeg",
+            "asset/Gallary/F.jpeg",
+            "asset/Gallary/G.jpeg",
+            "asset/Gallary/H.jpeg"
+        ],
+        videos: [
+            {
+                thumbnail: "https://i.ytimg.com/vi/7wtfhZwyrcc/maxresdefault.jpg",
+                src: "https://www.youtube.com/embed/7wtfhZwyrcc"
+            },
+            {
+                thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+                src: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+            },
+            {
+                thumbnail: "https://i.ytimg.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+                src: "https://www.youtube.com/embed/9bZkp7q19f0"
+            }
+        ]
+    };
+
+    // DOM elements
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const galleryContainers = document.querySelectorAll('.gallery-container');
+    const allGallery = document.getElementById('allGallery');
+    const imageGallery = document.getElementById('imageGallery');
+    const videoGallery = document.getElementById('videoGallery');
+    const modal = document.getElementById('mediaModal');
+    const modalContent = document.querySelector('.modal-content');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const previewContainer = document.getElementById('previewContainer');
+    const preview = document.getElementById('preview');
+
+    // State variables
+    let currentMediaType = 'all';
+    let currentIndex = 0;
+    let currentItems =[];
+    let combinedItems =[];
+
+    // Initialize galleries
+    function initGalleries() {
+        // Create limited items for "All" gallery (6 images + 2 videos)
+        const limitedImages = galleryData.images.slice(0, 6);
+const limitedVideos = galleryData.videos.slice(0, 2);
+
+combinedItems = [
+    ...limitedImages.map(img => ({ type: 'image', src: img })),
+    ...limitedVideos.map(vid => ({ type: 'video', ...vid }))
+];
+
+// Create all media gallery with limited items
+combinedItems.forEach((item, index) => {
+    const galleryItem = createGalleryItem(item, index, 'all');
+    allGallery.appendChild(galleryItem);
+});
+
+// Create full image gallery
+galleryData.images.forEach((imgSrc, index) => {
+    const galleryItem = createGalleryItem(
+        { type: 'image', src: imgSrc },
+        index,
+        'image'
+    );
+    imageGallery.appendChild(galleryItem);
+});
+
+// Create full video gallery
+galleryData.videos.forEach((video, index) => {
+    const galleryItem = createGalleryItem(
+        { type: 'video', ...video },
+        index,
+        'video'
+    );
+    videoGallery.appendChild(galleryItem);
+});
         }
-    ]
-};
-
-// DOM elements
-const tabButtons = document.querySelectorAll('.tab-btn');
-const galleryContainers = document.querySelectorAll('.gallery-container');
-const allGallery = document.getElementById('allGallery');
-const imageGallery = document.getElementById('imageGallery');
-const videoGallery = document.getElementById('videoGallery');
-const modal = document.getElementById('mediaModal');
-const modalContent = document.querySelector('.modal-content');
-const closeBtn = document.querySelector('.close');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const previewContainer = document.getElementById('previewContainer');
-const preview = document.getElementById('preview');
-
-// State variables
-let currentMediaType = 'all';
-let currentIndex = 0;
-let currentItems = [];
-let combinedItems = [];
-
-// Initialize galleries
-function initGalleries() {
-    // Create limited items for "All" gallery (6 images + 2 videos)
-    const limitedImages = galleryData.images.slice(0, 6);
-    const limitedVideos = galleryData.videos.slice(0, 2);
-
-    combinedItems = [
-        ...limitedImages.map(img => ({ type: 'image', src: img })),
-        ...limitedVideos.map(vid => ({ type: 'video', ...vid }))
-    ];
-
-    // Create all media gallery with limited items
-    combinedItems.forEach((item, index) => {
-        const galleryItem = createGalleryItem(item, index, 'all');
-        allGallery.appendChild(galleryItem);
-    });
-
-    // Create full image gallery
-    galleryData.images.forEach((imgSrc, index) => {
-        const galleryItem = createGalleryItem(
-            { type: 'image', src: imgSrc },
-            index,
-            'image'
-        );
-        imageGallery.appendChild(galleryItem);
-    });
-
-    // Create full video gallery
-    galleryData.videos.forEach((video, index) => {
-        const galleryItem = createGalleryItem(
-            { type: 'video', ...video },
-            index,
-            'video'
-        );
-        videoGallery.appendChild(galleryItem);
-    });
-}
 
 // Create a gallery item
 function createGalleryItem(item, index, galleryType) {
@@ -235,7 +232,19 @@ function createGalleryItem(item, index, galleryType) {
 
     // Add click event
     galleryItem.addEventListener('click', () => {
-        openModal(galleryType === 'all' ? item.type : galleryType, index);
+        if (galleryType === 'all') {
+            if (item.type === 'video') {
+                // Find the video in the original array
+                const videoIndex = galleryData.videos.findIndex(v => v.src === item.src);
+                openModal('video', videoIndex);
+            } else {
+                // Find the image in the original array
+                const imgIndex = galleryData.images.indexOf(item.src);
+                openModal('image', imgIndex);
+            }
+        } else {
+            openModal(item.type, index);
+        }
     });
 
     return galleryItem;
@@ -261,25 +270,7 @@ tabButtons.forEach(button => {
 function openModal(type, index) {
     currentMediaType = type;
     currentIndex = index;
-
-    if (type === 'all') {
-        // For "All" gallery, we need to determine if the clicked item is image or video
-        const clickedItem = combinedItems[index];
-        currentMediaType = clickedItem.type;
-        currentItems = currentMediaType === 'image' ?
-            galleryData.images.slice(0, 6) :  // Use limited images for "All" tab
-            galleryData.videos.slice(0, 2);  // Use limited videos for "All" tab
-
-        // Find the index in the limited array
-        if (currentMediaType === 'image') {
-            currentIndex = galleryData.images.indexOf(clickedItem.src);
-        } else {
-            currentIndex = galleryData.videos.findIndex(v => v.thumbnail === clickedItem.thumbnail);
-        }
-    } else {
-        // For specific tabs, use all items
-        currentItems = type === 'image' ? galleryData.images : galleryData.videos;
-    }
+    currentItems = type === 'image' ? galleryData.images : galleryData.videos;
 
     modal.style.display = 'flex';
     updateModalContent();
@@ -335,7 +326,7 @@ function updateModalContent() {
         modalContent.appendChild(img);
     } else {
         const iframe = document.createElement('iframe');
-        iframe.src = currentItems[currentIndex].src;
+        iframe.src = currentItems[currentIndex].src + '?autoplay=1';
         iframe.width = '800';
         iframe.height = '450';
         iframe.frameBorder = '0';
@@ -353,7 +344,7 @@ function closeModal() {
     // Pause any playing videos when closing
     const iframe = modalContent.querySelector('iframe');
     if (iframe) {
-        iframe.src = iframe.src; // Reset src to stop video
+        iframe.src = '';
     }
 }
 
