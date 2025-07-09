@@ -45,40 +45,86 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('dashboardLanguage', isHindiActive ? 'hi' : 'en');
         updateChartLabels(isHindiActive);
     });
-    
 
-   
+
+
 });
 
 // Show/hide the button based on scroll position
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  const backToTopBtn = document.getElementById("backToTopBtn");
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    backToTopBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-  }
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
 }
 
 // Smooth scroll to top when clicked
-document.getElementById('backToTopBtn').addEventListener('click', function(e) {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+document.getElementById('backToTopBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
-        // Check if localStorage has a count value
-        if (localStorage.getItem('count')) {
-            // If yes, increment it
-            let count = parseInt(localStorage.getItem('count')) + 1;
-            localStorage.setItem('count', count);
-            document.getElementById('count').textContent = count;
-        } else {
-            // If no, initialize with 1
-            localStorage.setItem('count', 1);
-            document.getElementById('count').textContent = 1;
+// Check if localStorage has a count value
+if (localStorage.getItem('count')) {
+    // If yes, increment it
+    let count = parseInt(localStorage.getItem('count')) + 1;
+    localStorage.setItem('count', count);
+    document.getElementById('count').textContent = count;
+} else {
+    // If no, initialize with 1
+    localStorage.setItem('count', 1);
+    document.getElementById('count').textContent = 1;
+}
+
+// owl Slider Initialization
+
+$(document).ready(function () {
+    $(".logo-slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000, // 3 seconds between transitions
+        autoplaySpeed: 1000, // 1 second transition animation
+        autoplayHoverPause: true,
+        smartSpeed: 800,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 6
+            }
         }
+    });
+
+    // Add animation class during transition
+    $('.logo-slider').on('changed.owl.carousel', function (event) {
+        $('.owl-item').removeClass('animated');
+        $('.owl-item.active').addClass('animated');
+    });
+});
+
+
+    // Mobile dropdown fix
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+            const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+            openDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+            });
+        }
+    });
+
+  

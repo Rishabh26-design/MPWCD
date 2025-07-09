@@ -102,7 +102,7 @@ h6 {
 .scheme-filter.active {
     background-color: var(--primary-blue);
     color: white;
-   
+
 }
 
 /* Grievance Form */
@@ -138,6 +138,7 @@ footer a:hover {
     .news-ticker {
         margin-top: 0.2rem;
     }
+
     .responsive {
         font-size: small;
     }
@@ -164,12 +165,19 @@ body.hindi-active [lang="hi"] {
     text-align: center;
     margin-right: 8px;
 }
-.nav-link{
+
+.nav-link {
     color: white !important;
 }
-.nav-link.active{
+
+.nav-link:hover {
+    background-color: rgb(236, 235, 235) !important;
     color: #6059f6 !important;
-    background-color: #e6e6e6 !important;
+}
+
+.nav-link.active {
+    color: #6059f6 !important;
+    background-color: rgb(236, 235, 235) !important;
     border: 1px solid #6059f6 !important;
 }
 
@@ -193,10 +201,46 @@ body.hindi-active [lang="hi"] {
     right: 1rem;
 }
 
-/* Center the dropdown menus */
-.dropdown-menu {
-    left: 50%;
-    transform: translateX(-50%);
+/* Responsive dropdown fixes */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        width: 100%;
+        margin-top: 0;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-item {
+        padding-left: 2rem !important;
+    }
+
+    .dropdown-toggle::after {
+        float: right;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Desktop hover dropdown */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown-toggle:focus+.dropdown-menu {
+        display: block;
+    }
 }
 
 .navbar-nav .nav-item:not(:last-child) {
@@ -239,11 +283,141 @@ body.hindi-active [lang="hi"] {
     /* Slightly darker on hover */
     transform: translateY(-3px);
 }
+
 .img-outline {
-      outline: 2px solid #b6b6b6;
-      outline-offset: 2px;
-    }
+    outline: 2px solid #b6b6b6;
+    outline-offset: 2px;
+}
+
+.about-title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.about-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background-color: #6059f6;
+    border-radius: 2px;
+}
+
+.logo-slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.owl-carousel {
+    position: relative;
+    padding: 0 50px;
+}
+
+.owl-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+}
 
 
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel button.owl-dot {
+    background: 0 0;
+    color: inherit;
+    border: none;
+    font: inherit;
+    margin-left: -92px;
+}
 
+.owl-carousel .owl-item {
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border-radius: 12px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.212);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    margin: 0 5px;
+    cursor: pointer;
+    /* Hand pointer on hover */
+}
 
+.owl-carousel .owl-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+    width: auto;
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.owl-carousel .owl-item:hover img {
+    filter: grayscale(0%);
+    /* opacity: 0.7; */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+
+/* Remove dots */
+.owl-dots {
+    display: none !important;
+}
+
+/* Style navigation buttons */
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.owl-nav button {
+    width: 50px;
+    height: 50px;
+    background: #fff !important;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    pointer-events: all;
+}
+
+.owl-nav button:hover {
+    background: #f8f8f8 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.owl-nav button span {
+    font-size: 28px;
+    color: #555;
+    line-height: 1;
+    font-weight: 500;
+}
+
+/* Center items vertically */
+.owl-stage-outer {
+    padding: 20px 0;
+}

@@ -9,6 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
@@ -20,13 +24,14 @@
 
 <body>
     <!-- Header Section -->
-    <header class="headerbg text-dark p-1 " style="background-color: #e6e6e6;">
+    <header class="headerbg text-dark p-1 "
+        style="background: linear-gradient(20deg,rgba(227, 230, 230, 1) 1%, rgba(188, 191, 191, 1) 100%);">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center ">
                     <a>
-                        <span lang="en">Government of Madhya Pradesh</span>
-                        <span lang="hi">मध्यप्रदेश शासन</span>
+                        <span lang="en">MPWCD</span>
+                        <span lang="hi">MPWCD</span>
                     </a>
                 </div>
                 <div>
@@ -66,7 +71,7 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
-            <div class="container " style="background-color: #6059f6;">
+            <div class="container" style="background-color: #6059f6;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
                     aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -252,21 +257,17 @@
         <div class="container bg-white py-5 px-4 my-4">
             <div class="row">
                 <div class="col-md-7">
-                    <h2 class="mb-4">About Us</h2>
-                    <p style="font-size: 0.875rem; line-height: 1.4;">
-                        In Madhya Pradesh, the Directorate of Women and Child Development was formed on 15 August 86 and
-                        all the schemes related to women and children were transferred to this Directorate from the
-                        Tribal Welfare Department and the Panchayat and Social Welfare Department. Initially, this
-                        Directorate remained under the administrative control of the Panchayat and Rural Development
-                        Department and in the year 1988, a separate Department of Women and Child Development was
-                        formed. The beneficiaries of the Department of Women and Child Development are the weaker
-                        sections of the society, women and children, whose development and welfare work is not going to
-                        be completed in an easy and short period. Many schemes of the department have been expanded,
-                        while new schemes like Ladli Laxmi Yojana, Atal Bal Mission, Integrated Child Protection Scheme
-                        are also being run. Remaining dynamic, the department has accepted every challenge for
-                        development. The figures of achievement are not big but there has been a continuous improvement
-                        in the status of women in the society, women have become aware of their rights and interests,
-                        malnutrition of children has decreased.
+                    <h2 class="mb-4 about-title">About Us</h2>
+                    <p style="font-size: 1.15rem; line-height: 1.4;">
+                        The Directorate of Women and Child Development was established in Madhya Pradesh on 15 August
+                        1986, taking over schemes related to women and children from the Tribal Welfare Department and
+                        the Panchayat and Social Welfare Department. Initially under the Panchayat and Rural Development
+                        Department, it became a separate department in 1988. The department focuses on the welfare of
+                        women and children from weaker sections, with long-term development goals. It has expanded
+                        existing schemes and introduced new ones like Ladli Laxmi Yojana, Atal Bal Mission, and the
+                        Integrated Child Protection Scheme. While progress is gradual, there has been notable
+                        improvement in women's status, awareness of their rights, and a reduction in child malnutrition.
+                        The department remains committed to addressing challenges for continued development.
                     </p>
                 </div>
                 <div class="col-md-1 d-none d-md-block">
@@ -279,7 +280,8 @@
                             <div class="ms-3 text-start flex-grow-1 px-1">
                                 <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
                                     Dr. Mohan Yadav</p>
-                                <p class="mb-0" style="font-size: 0.875rem;"><strong>Hon'ble Chief Minister </strong><br> Madhya Pradesh</p>
+                                <p class="mb-0" style="font-size: 0.875rem;"><strong>Hon'ble Chief Minister
+                                    </strong><br> Madhya Pradesh</p>
                             </div>
                         </div>
                     </div>
@@ -293,7 +295,8 @@
                                     Mrs. Nirmala Bhuria</p>
                                 <p class="mb-0" style="font-size: 0.875rem;">
                                     <strong>Hon'ble Minister </strong><br>
-                                    Women and Child Development, Madhya Pradesh</p>
+                                    Women and Child Development, Madhya Pradesh
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -310,7 +313,7 @@
     <!-- Quick Links Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5 text-primary">Quick Access</h2>
+            <h4 class="text-center mb-5 text-primary">Quick Access</h4>
             <div class="row g-4">
                 <div class="col-md-3 col-6">
                     <div class="card h-100 border-0 shadow-sm hover-effect">
@@ -390,7 +393,7 @@
 
     <!-- Schemes Section -->
     <section class="py-5">
-        <h2 class="text-center mb-4 text-primary">Featured Schemes</h2>
+        <h4 class="text-center mb-4 text-primary">Featured Schemes</h4>
         <div class="container bg-light pt-3">
             <div class="row mb-4">
                 <div class="col-md-4">
@@ -469,6 +472,52 @@
     <button id="backToTopBtn" class="btn btn-primary rounded-circle shadow" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <section class="py-3" style="background-color: rgb(238, 236, 249);">
+        <div class="container">
+            <h4 class="text-center mt-2 text-primary">Other Department Portal</h4>
+            <div class="logo-slider-container">
+                <div class="owl-carousel logo-slider">
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/Ladli_behna.png" alt="Partner Logo 1">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/Kadam.png" alt="Partner Logo 2">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/Laxmi.png" alt="Partner Logo 3">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/poshan.png" alt="Partner Logo 4">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/She.png" alt="Partner Logo 5">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/Laxmi.png" alt="Partner Logo 6">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" target="_blank">
+                            <img src="asset/poshan.png" alt="Partner Logo 7">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-white pt-5 pb-3" style="background-image: url(asset/Footer_BG.jpg);">
         <div class="container">
@@ -551,6 +600,8 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
