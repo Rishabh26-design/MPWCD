@@ -42,7 +42,8 @@
         </div>
     </header>
     <!-- Header with Navigation -->
-    <header class="sticky-top bg-white shadow-sm mt-2">
+    <header class="sticky-top shadow-sm "
+        style="background-image: url(asset/header_BG.jpg); background-repeat: no-repeat; background-size: cover;">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -254,11 +255,13 @@
 
 
     <section class="py-0 bg-light">
-        <div class="container bg-white py-5 px-4 my-4">
+        <div class="container bg-white py-4 px-4 my-4">
             <div class="row">
                 <div class="col-md-7">
                     <h2 class="mb-4 about-title">About Us</h2>
-                    <p style="font-size: 1.15rem; line-height: 1.4;">
+                    <!-- <h2 class="mb-4 about-title" lang="hi">हमारे बारे में</h2> -->
+
+                    <p style="font-size: 1.15rem; line-height: 1.4;" lang="en">
                         The Directorate of Women and Child Development was established in Madhya Pradesh on 15 August
                         1986, taking over schemes related to women and children from the Tribal Welfare Department and
                         the Panchayat and Social Welfare Department. Initially under the Panchayat and Rural Development
@@ -269,6 +272,19 @@
                         improvement in women's status, awareness of their rights, and a reduction in child malnutrition.
                         The department remains committed to addressing challenges for continued development.
                     </p>
+                    <p style="font-size: 1.15rem; line-height: 1.4;" lang="hi">
+                        मध्य प्रदेश में महिला एवं बाल विकास निदेशालय की स्थापना 15 अगस्त
+                        1986 को हुई थी, जिसने आदिम जाति कल्याण विभाग और
+                        पंचायत एवं समाज कल्याण विभाग से महिलाओं और बच्चों से संबंधित योजनाओं का कार्यभार अपने हाथ में ले
+                        लिया। शुरुआत में यह पंचायत एवं ग्रामीण विकास
+                        विभाग के अधीन था, लेकिन 1988 में यह एक अलग विभाग बन गया। यह विभाग दीर्घकालिक विकास लक्ष्यों के
+                        साथ, कमज़ोर वर्गों की महिलाओं और बच्चों के कल्याण पर केंद्रित है। इसने मौजूदा योजनाओं का विस्तार
+                        किया है और लाड़ली लक्ष्मी योजना, अटल बाल मिशन और
+                        समेकित बाल संरक्षण योजना जैसी नई योजनाएँ शुरू की हैं। हालाँकि प्रगति धीमी है, फिर भी महिलाओं की
+                        स्थिति में उल्लेखनीय सुधार हुआ है, उनके अधिकारों के प्रति जागरूकता बढ़ी है और बाल कुपोषण में कमी
+                        आई है।
+                        विभाग निरंतर विकास की चुनौतियों का समाधान करने के लिए प्रतिबद्ध है।
+                    </p>
                 </div>
                 <div class="col-md-1 d-none d-md-block">
                 </div>
@@ -276,7 +292,7 @@
                     <div class="card shadow" style="width: 100%;">
                         <div class="d-flex align-items-center p-3">
                             <img src="asset/CM.png" alt="Portrait of Narendra Modi wearing brown vest and white kurta"
-                                class="rounded img-outline" style="width: 100px; height: 100px; object-fit: cover;" />
+                                class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
                             <div class="ms-3 text-start flex-grow-1 px-1">
                                 <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
                                     Dr. Mohan Yadav</p>
@@ -289,7 +305,7 @@
                         <div class="d-flex align-items-center p-3 ">
                             <img src="asset/Mantri.png"
                                 alt="Portrait of Narendra Modi wearing brown vest and white kurta"
-                                class="rounded img-outline" style="width: 100px; height: 100px; object-fit: cover;" />
+                                class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
                             <div class="ms-3 text-start flex-grow-1 px-1">
                                 <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
                                     Mrs. Nirmala Bhuria</p>
@@ -421,6 +437,7 @@
                     <thead class="table-light">
                         <tr>
                             <th>Scheme</th>
+                            <th>Scheme Type</th>
                             <th>For</th>
                             <th>Benefits</th>
                             <th>Action</th>
@@ -432,33 +449,37 @@
                                 <h5 class="mb-1">Ladli Laxmi Yojana</h5>
                                 <small class="text-muted">Financial support for girl child</small>
                             </td>
+                            <td>State</td>
                             <td>Girl Child</td>
                             <td>₹1.2L on maturity</td>
-                            <td><a href="#" class="btn btn-sm btn-primary">Apply</a></td>
+                            <td><a href="#" class="btn btn-sm btn-primary">Learn More</a></td>
                         </tr>
                         <tr data-category="women">
                             <td>
                                 <h5 class="mb-1">Pradhan Mantri Matru Vandana Yojana (PMMVY)</h5>
                                 <small class="text-muted">Maternity benefit program</small>
                             </td>
+                            <td>Central</td>
                             <td>Pregnant Women</td>
                             <td>₹5,000 maternity aid</td>
-                            <td><a href="#" class="btn btn-sm btn-primary">Apply</a></td>
+                            <td><a href="#" class="btn btn-sm btn-primary">Learn More</a></td>
                         </tr>
                         <tr data-category="child">
                             <td>
                                 <h5 class="mb-1">Poshan Abhiyan</h5>
                                 <small class="text-muted">Nutrition Mission</small>
                             </td>
+                            <td>Central</td>
                             <td>Children (0-6 yrs)</td>
                             <td>Nutrition support</td>
-                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                            <td><a href="#" class="btn btn-sm btn-primary">Learn More</a></td>
                         </tr>
                         <tr data-category="child">
                             <td>
                                 <h5 class="mb-1">ICDS Services</h5>
                                 <small class="text-muted">Integrated Child Development Services</small>
                             </td>
+                            <td>Central</td>
                             <td>Children & Mothers</td>
                             <td>Health & nutrition</td>
                             <td><a href="#" class="btn btn-sm btn-primary">Learn More</a></td>
@@ -468,10 +489,47 @@
             </div>
         </div>
     </section>
-
     <button id="backToTopBtn" class="btn btn-primary rounded-circle shadow" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="container">
+                <h4 class="text-center mb-4 text-primary"> Featured Gallery</h4>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="all-gallery">All Media</button>
+                    <button class="tab-btn" data-tab="image-gallery">Image Gallery</button>
+                    <button class="tab-btn" data-tab="video-gallery">Video Gallery</button>
+                </div>
+
+                <div id="all-gallery" class="gallery-container active">
+                    <div class="gallery" id="allGallery"></div>
+                </div>
+
+                <div id="image-gallery" class="gallery-container">
+                    <div class="gallery" id="imageGallery"></div>
+                </div>
+
+                <div id="video-gallery" class="gallery-container">
+                    <div class="gallery" id="videoGallery"></div>
+                </div>
+            </div>
+
+            <div class="modal" id="mediaModal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <div class="modal-content">
+                    <!-- Content will be inserted here dynamically -->
+                </div>
+            </div>
+
+            <div class="preview-container" id="previewContainer">
+                <div class="preview" id="preview"></div>
+            </div>
+
+        </div>
+    </section>
 
     <section class="py-3" style="background-color: rgb(238, 236, 249);">
         <div class="container">
