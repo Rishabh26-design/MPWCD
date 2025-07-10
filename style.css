@@ -867,7 +867,7 @@ h1 {
 
     p[lang="en"],
     p[lang="hi"] {
-        font-size: 1rem !important;
+        font-size: 0.8rem !important;
         line-height: 1.5 !important;
     }
 
@@ -992,8 +992,8 @@ h1 {
 
     /* Card content layout */
     .d-flex.justify-content-between.align-items-center {
-        flex-direction: column;
-        align-items: flex-start !important;
+        /* flex-direction: column;
+        align-items: flex-start !important; */
         gap: 0.5rem;
     }
 
@@ -1016,5 +1016,88 @@ h1 {
     small.text-muted {
         font-size: 0.75rem;
         align-self: flex-end;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+
+    /* Gallery Section */
+    .Section-fade.py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    /* Gallery Header */
+    h4.text-center {
+        font-size: 1.25rem;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Tabs */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        flex: 1;
+        min-width: calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+    }
+
+    /* Gallery Grid Layout */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    /* Gallery Items */
+    .gallery-item {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    /* Video Play Icon */
+    .video-play-icon {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+
+    /* Modal Adjustments */
+    #mediaModal {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-height: 60vh;
+    }
+
+    .close,
+    .prev,
+    .next {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    /* Captions */
+    .gallery-caption {
+        font-size: 0.7rem;
+        padding: 0.25rem;
     }
 }
