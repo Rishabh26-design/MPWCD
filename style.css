@@ -738,3 +738,15 @@ h1 {
 .vertical-scroll-container::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* Animation Styles */
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }

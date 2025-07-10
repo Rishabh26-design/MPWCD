@@ -586,3 +586,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize auto-scroll
     startAutoScroll();
 });
+
+
+  // Page load transition
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 100);
+            
+            // Intersection Observer for scroll animations
+            const sections = document.querySelectorAll('.section-fade');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            });
+            
