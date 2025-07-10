@@ -377,7 +377,7 @@ body.hindi-active [lang="hi"] {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 40px;
     color: #333;
     font-weight: 500;
@@ -740,13 +740,281 @@ h1 {
 }
 
 /* Animation Styles */
-        .section-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .section-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.section-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@media (max-width: 767.98px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .navbar img {
+        height: 40px !important;
+        /* Reduce logo sizes */
+        margin-right: 0.5rem !important;
+    }
+
+    .navbar h1.h5 {
+        font-size: 0.9rem;
+        /* Reduce heading size */
+        margin-bottom: 0.2rem !important;
+    }
+
+    .navbar small {
+        font-size: 0.7rem;
+        /* Reduce subheading size */
+    }
+
+    .d-flex.align-items-center {
+        flex-wrap: nowrap;
+        /* Allow items to wrap if needed */
+    }
+
+    .poshan-logo {
+        display: none;
+    }
+
+
+}
+
+
+@media (max-width: 767.98px) {
+    .py-2 {
+        padding-top: 0.2rem !important;
+        padding-bottom: 0.2rem !important;
+    }
+
+    .col-sm-2 {
+        width: 30%;
+        /* Reduce first column width */
+        padding-right: 0.5rem;
+    }
+
+    .col-sm-10 {
+        width: 70%;
+        /* Adjust second column width */
+    }
+
+    .responsive {
+        font-size: 0.8rem;
+        /* Smaller font for "Latest Updates" */
+        white-space: nowrap;
+        /* Keep on one line */
+    }
+
+    .news-ticker {
+        overflow: hidden;
+        white-space: nowrap;
+        /* Ensure single line */
+    }
+
+    .ticker-content {
+        font-size: 0.8rem;
+        /* Smaller ticker text */
+        animation: ticker 15s linear infinite;
+        /* Adjust animation speed */
+    }
+
+    .ticker-content span {
+        margin-right: 1.5rem;
+        /* Reduce spacing between items */
+        display: inline-block;
+    }
+
+    .fa-bullhorn {
+        font-size: 0.7rem;
+        /* Smaller icon */
+    }
+}
+
+/* Optional: Adjust ticker animation speed for mobile */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .Section-fade {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        background-position: center;
+    }
+
+    .container.py-4.px-4 {
+        padding: 0 1rem !important;
+    }
+
+    .about-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem !important;
+    }
+
+    p[lang="en"],
+    p[lang="hi"] {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .col-md-4.col-12 {
+        margin-top: 1.5rem;
+        gap: 1.5rem !important;
+    }
+
+    .card.shadow {
+        width: 100% !important;
+    }
+
+    .card .d-flex {
+        flex-direction: row !important;
+        /* Keep horizontal layout */
+        align-items: center !important;
+        /* padding: 1rem !important; */
+    }
+
+    .card img {
+        width: 100px !important;
+        /* Fixed smaller width for mobile */
+        height: 120px !important;
+        /* Fixed height to maintain aspect ratio */
+        margin-bottom: 0 !important;
+        margin-right: 0.75rem !important;
+    }
+
+    .card .ms-3 {
+        margin-left: 0.5rem !important;
+        /* Restore some left margin */
+        margin-top: 0 !important;
+        flex: 1;
+        /* Allow text to take remaining space */
+    }
+
+    /* Adjust text sizes for smaller side-by-side layout */
+    .card p.fw-bold {
+        font-size: 0.85rem !important;
+    }
+
+    .card p.mb-0 {
+        font-size: 0.75rem !important;
+    }
+
+    /* Make cards slightly more compact */
+    .card {
+        padding: 0.5rem !important;
+    }
+}
+
+
+@media (max-width: 767.98px) {
+
+    /* Section adjustments */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Header adjustments */
+    h4.text-center {
+        font-size: 1.25rem;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Container adjustments */
+    .container.pt-3.rounded {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Filter and search row */
+    .row.mb-4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .col-md-4,
+    .col-md-5,
+    .col-md-3 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Filter buttons */
+    .btn-group.w-100 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .btn-group.w-100 .btn {
+        flex: 1;
+        min-width: 80px;
+        padding: 0.375rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Search box */
+    .input-group {
+        width: 100% !important;
+    }
+
+    /* Scroll container */
+    .vertical-scroll-container {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    /* Cards */
+    .scroll-item {
+        margin-bottom: 0.75rem;
+    }
+
+    .card {
+        border-radius: 0.5rem !important;
+    }
+
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Card content layout */
+    .d-flex.justify-content-between.align-items-center {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.5rem;
+    }
+
+    .d-flex.align-items-center.gap-3 {
+        gap: 0.75rem !important;
+    }
+
+    /* Badge */
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    /* Title and reference */
+    h6.card-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem !important;
+    }
+
+    small.text-muted {
+        font-size: 0.75rem;
+        align-self: flex-end;
+    }
+}

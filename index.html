@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    
+
 
     <!-- Header Section -->
     <header class="headerbg text-dark p-1 "
@@ -50,9 +50,9 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center w-100">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center mt-3">
                             <img src="asset/MP_LOGO.png" alt="MP Government Logo" height="60" class="me-2">
-                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-3">
+                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-4">
 
                             <div>
                                 <h1 class="h5 mb-0 fw-bold">
@@ -65,9 +65,14 @@
                                 </small>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="poshan-logo">
                             <img src="asset/POSHAN_LOGO.png" alt="Poshan Abhiyan Logo" height="60">
                         </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -75,10 +80,8 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
             <div class="container" style="background-color: rgb(78 39 116) ; border-radius: 25px;">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
-                    aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+
 
                 <div class="collapse navbar-collapse" id="topNavbar">
                     <ul class="navbar-nav me-auto gap-2">
@@ -256,8 +259,9 @@
     </div>
 
 
-    <section class="py-4 Section-fade " style="background-color: rgb(238, 236, 249); background-image: url(asset/par-bg.png); background-size: cover;">
-        <div class="container  py-4 px-4">
+    <section class="py-4 Section-fade "
+        style="background-color: rgb(238, 236, 249); background-image: url(asset/par-bg.png); background-size: cover;">
+        <div class="container py-4 px-4">
             <div class="row">
                 <div class="col-md-7">
                     <h2 class="mb-4 about-title">About Us</h2>
@@ -329,276 +333,296 @@
 
     <!-- Cicculer Order -->
 
-    <section class="py-5 bg-light" Section-fade >
+    <section class="py-5 " style="background-image: url(asset/BGG.jpg); background-size: cover;">
 
         <h4 class="text-center mb-4 text-primary">Tenders & Circulars</h4>
         <div class="container  pt-3 rounded">
             <div class="row">
-            <div class="col-md-12 p-4" style="background-color: rgb(238, 236, 249);">
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <div class="btn-group w-100" role="group">
-                            <button type="button" class="btn btn-outline-primary tender-filter active"
-                                data-filter="all">All</button>
-                            <button type="button" class="btn btn-outline-primary tender-filter"
-                                data-filter="tender">Tender</button>
-                            <button type="button" class="btn btn-outline-primary tender-filter"
-                                data-filter="circular">Circular</button>
+                <div class="col-md-12 p-4" style="background-color: rgb(238, 236, 249);">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="btn-group w-100" role="group">
+                                <button type="button" class="btn btn-outline-primary tender-filter active"
+                                    data-filter="all">All</button>
+                                <button type="button" class="btn btn-outline-primary tender-filter"
+                                    data-filter="tender">Tender</button>
+                                <button type="button" class="btn btn-outline-primary tender-filter"
+                                    data-filter="circular">Circular</button>
+                            </div>
+                        </div>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-3 mt-2 mt-md-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="tenderSearch">
+                                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-5"></div>
-                    <div class="col-md-3 mt-2 mt-md-0">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search..." id="tenderSearch">
-                            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="vertical-scroll-container" id="tendersContainer">
-                    <div class="vertical-scroll-row" id="scrollContent">
-                        <!-- Tenders -->
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3" href="#">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Supply of Nutrition Kits for Anganwadi Centers
-                                            </h6>
+                    <div class="vertical-scroll-container" id="tendersContainer">
+                        <div class="vertical-scroll-row" id="scrollContent">
+                            <!-- Tenders -->
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3" href="#">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Supply of Nutrition Kits for Anganwadi
+                                                    Centers
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/001 |
+                                                15-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/001 | 15-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Construction of New Anganwadi Buildings</h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Construction of New Anganwadi Buildings</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/002 |
+                                                10-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/002 | 10-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Procurement of Educational Toys for Balwadis
-                                            </h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Procurement of Educational Toys for Balwadis
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/003 |
+                                                05-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/003 | 05-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Annual Maintenance Contract for Anganwadi
-                                                Equipment
-                                            </h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Annual Maintenance Contract for Anganwadi
+                                                    Equipment
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/004 |
+                                                01-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/004 | 01-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Circulars -->
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Revised Nutrition Guidelines for Pregnant Women
-                                            </h6>
+                            <!-- Circulars -->
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Revised Nutrition Guidelines for Pregnant
+                                                    Women
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/001 |
+                                                28-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/001 | 28-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Training Program for Anganwadi Workers</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Training Program for Anganwadi Workers</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/002 |
+                                                22-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/002 | 22-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Implementation of POSHAN Abhiyaan 2.0</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Implementation of POSHAN Abhiyaan 2.0</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/003 |
+                                                15-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/003 | 15-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Monthly Reporting Format Changes</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Monthly Reporting Format Changes</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/004 |
+                                                10-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/004 | 10-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Tenders -->
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3" href="#">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Supply of Nutrition Kits for Anganwadi Centers
-                                            </h6>
+                            <!-- Tenders -->
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3" href="#">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Supply of Nutrition Kits for Anganwadi
+                                                    Centers
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/001 |
+                                                15-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/001 | 15-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Construction of New Anganwadi Buildings</h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Construction of New Anganwadi Buildings</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/002 |
+                                                10-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/002 | 10-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Procurement of Educational Toys for Balwadis
-                                            </h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Procurement of Educational Toys for Balwadis
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/003 |
+                                                05-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/003 | 05-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="tender">
-                            <div class="card border-primary w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-primary">Tender</span>
-                                            <h6 class="card-title mb-0">Annual Maintenance Contract for Anganwadi
-                                                Equipment
-                                            </h6>
+                            <div class="scroll-item" data-category="tender">
+                                <div class="card border-primary w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-primary">Tender</span>
+                                                <h6 class="card-title mb-0">Annual Maintenance Contract for Anganwadi
+                                                    Equipment
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/TND/2024/004 |
+                                                01-May-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/TND/2024/004 | 01-May-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Circulars -->
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Revised Nutrition Guidelines for Pregnant Women
-                                            </h6>
+                            <!-- Circulars -->
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Revised Nutrition Guidelines for Pregnant
+                                                    Women
+                                                </h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/001 |
+                                                28-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/001 | 28-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Training Program for Anganwadi Workers</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Training Program for Anganwadi Workers</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/002 |
+                                                22-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/002 | 22-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Implementation of POSHAN Abhiyaan 2.0</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Implementation of POSHAN Abhiyaan 2.0</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/003 |
+                                                15-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/003 | 15-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="scroll-item" data-category="circular">
-                            <div class="card border-success w-100">
-                                <div class="card-body p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <span class="badge bg-success">Circular</span>
-                                            <h6 class="card-title mb-0">Monthly Reporting Format Changes</h6>
+                            <div class="scroll-item" data-category="circular">
+                                <div class="card border-success w-100">
+                                    <div class="card-body p-3">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <span class="badge bg-success">Circular</span>
+                                                <h6 class="card-title mb-0">Monthly Reporting Format Changes</h6>
+                                            </div>
+                                            <small class="text-muted text-wrap">Ref: WCD/CIR/2024/004 |
+                                                10-Apr-2024</small>
                                         </div>
-                                        <small class="text-muted text-wrap">Ref: WCD/CIR/2024/004 | 10-Apr-2024</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -686,7 +710,7 @@
         </section> -->
 
     <!-- Schemes Section -->
-    <section class="py-5 Section-fade" Style="background-color: rgba(91, 80, 150, 0.856);" >
+    <section class="py-5 Section-fade" Style="background-color: rgba(91, 80, 150, 0.856);">
         <h4 class="text-center mb-4 text-white">Featured Schemes</h4>
         <div class="container bg-light pt-3 rounded">
             <div class="row mb-4">
@@ -856,7 +880,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark  Section-fade text-white pt-5 pb-3" style="background-image: url(asset/Footer_BG.jpg);">
+    <footer class="bg-dark  Section-fade text-white pt-5 pb-3"
+        style="background-image: url(asset/Footer_BG.jpg); background-position: center;">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4 col-12">
