@@ -987,14 +987,14 @@ h1 {
     }
 
     .card-body {
-        padding: 1rem !important;
+        padding: 0.5rem !important;
     }
 
     /* Card content layout */
     .d-flex.justify-content-between.align-items-center {
         /* flex-direction: column;
         align-items: flex-start !important; */
-        gap: 0.5rem;
+        gap: 0rem;
     }
 
     .d-flex.align-items-center.gap-3 {
@@ -1003,18 +1003,18 @@ h1 {
 
     /* Badge */
     .badge {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         padding: 0.25rem 0.5rem;
     }
 
     /* Title and reference */
     h6.card-title {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         margin-bottom: 0.25rem !important;
     }
 
     small.text-muted {
-        font-size: 0.75rem;
+        font-size: 0.5rem;
         align-self: flex-end;
     }
 }
@@ -1099,5 +1099,8 @@ h1 {
     .gallery-caption {
         font-size: 0.7rem;
         padding: 0.25rem;
+    }
+    .vertical-scroll-row{
+        gap: 1px;
     }
 }
