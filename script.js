@@ -127,91 +127,91 @@ document.addEventListener('click', function (e) {
     }
 });
 
-    // Sample data for the galleries
-    const galleryData = {
-        images: [
-            "asset/Gallary/A.jpeg",
-            "asset/Gallary/B.jpeg",
-            "asset/Gallary/C.jpeg",
-            "asset/Gallary/D.jpeg",
-            "asset/Gallary/E.jpeg",
-            "asset/Gallary/F.jpeg",
-            "asset/Gallary/G.jpeg",
-            "asset/Gallary/H.jpeg"
-        ],
-        videos: [
-            {
-                thumbnail: "https://i.ytimg.com/vi/7wtfhZwyrcc/maxresdefault.jpg",
-                src: "https://www.youtube.com/embed/7wtfhZwyrcc"
-            },
-            {
-                thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-                src: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-            },
-            {
-                thumbnail: "https://i.ytimg.com/vi/9bZkp7q19f0/maxresdefault.jpg",
-                src: "https://www.youtube.com/embed/9bZkp7q19f0"
-            }
-        ]
-    };
-
-    // DOM elements
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const galleryContainers = document.querySelectorAll('.gallery-container');
-    const allGallery = document.getElementById('allGallery');
-    const imageGallery = document.getElementById('imageGallery');
-    const videoGallery = document.getElementById('videoGallery');
-    const modal = document.getElementById('mediaModal');
-    const modalContent = document.querySelector('.modal-content');
-    const closeBtn = document.querySelector('.close');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const previewContainer = document.getElementById('previewContainer');
-    const preview = document.getElementById('preview');
-
-    // State variables
-    let currentMediaType = 'all';
-    let currentIndex = 0;
-    let currentItems =[];
-    let combinedItems =[];
-
-    // Initialize galleries
-    function initGalleries() {
-        // Create limited items for "All" gallery (6 images + 2 videos)
-        const limitedImages = galleryData.images.slice(0, 6);
-const limitedVideos = galleryData.videos.slice(0, 2);
-
-combinedItems = [
-    ...limitedImages.map(img => ({ type: 'image', src: img })),
-    ...limitedVideos.map(vid => ({ type: 'video', ...vid }))
-];
-
-// Create all media gallery with limited items
-combinedItems.forEach((item, index) => {
-    const galleryItem = createGalleryItem(item, index, 'all');
-    allGallery.appendChild(galleryItem);
-});
-
-// Create full image gallery
-galleryData.images.forEach((imgSrc, index) => {
-    const galleryItem = createGalleryItem(
-        { type: 'image', src: imgSrc },
-        index,
-        'image'
-    );
-    imageGallery.appendChild(galleryItem);
-});
-
-// Create full video gallery
-galleryData.videos.forEach((video, index) => {
-    const galleryItem = createGalleryItem(
-        { type: 'video', ...video },
-        index,
-        'video'
-    );
-    videoGallery.appendChild(galleryItem);
-});
+// Sample data for the galleries
+const galleryData = {
+    images: [
+        "asset/Gallary/A.jpeg",
+        "asset/Gallary/B.jpeg",
+        "asset/Gallary/C.jpeg",
+        "asset/Gallary/D.jpeg",
+        "asset/Gallary/E.jpeg",
+        "asset/Gallary/F.jpeg",
+        "asset/Gallary/G.jpeg",
+        "asset/Gallary/H.jpeg"
+    ],
+    videos: [
+        {
+            thumbnail: "asset/Gallary/Thumbnail_1.jpg",
+            src: "https://www.youtube.com/embed/1zXkktw5t4I?si=3P-mcQtLvpxPrXYJ"
+        },
+        {
+            thumbnail: "asset/Gallary/Thumbnail_3.jpg",
+            src: "https://www.youtube.com/embed/uT823FOKokg?si=W6HgS5ypZmZdnS1y"
+        },
+        {
+            thumbnail: "asset/Gallary/Thumbnail_2.jpg",
+            src: "https://www.youtube.com/embed/AKNUUMAthiA?si=9kWZXQkNCvp_q7Cw"
         }
+    ]
+};
+
+// DOM elements
+const tabButtons = document.querySelectorAll('.tab-btn');
+const galleryContainers = document.querySelectorAll('.gallery-container');
+const allGallery = document.getElementById('allGallery');
+const imageGallery = document.getElementById('imageGallery');
+const videoGallery = document.getElementById('videoGallery');
+const modal = document.getElementById('mediaModal');
+const modalContent = document.querySelector('.modal-content');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const previewContainer = document.getElementById('previewContainer');
+const preview = document.getElementById('preview');
+
+// State variables
+let currentMediaType = 'all';
+let currentIndex = 0;
+let currentItems = [];
+let combinedItems = [];
+
+// Initialize galleries
+function initGalleries() {
+    // Create limited items for "All" gallery (6 images + 2 videos)
+    const limitedImages = galleryData.images.slice(0, 6);
+    const limitedVideos = galleryData.videos.slice(0, 2);
+
+    combinedItems = [
+        ...limitedImages.map(img => ({ type: 'image', src: img })),
+        ...limitedVideos.map(vid => ({ type: 'video', ...vid }))
+    ];
+
+    // Create all media gallery with limited items
+    combinedItems.forEach((item, index) => {
+        const galleryItem = createGalleryItem(item, index, 'all');
+        allGallery.appendChild(galleryItem);
+    });
+
+    // Create full image gallery
+    galleryData.images.forEach((imgSrc, index) => {
+        const galleryItem = createGalleryItem(
+            { type: 'image', src: imgSrc },
+            index,
+            'image'
+        );
+        imageGallery.appendChild(galleryItem);
+    });
+
+    // Create full video gallery
+    galleryData.videos.forEach((video, index) => {
+        const galleryItem = createGalleryItem(
+            { type: 'video', ...video },
+            index,
+            'video'
+        );
+        videoGallery.appendChild(galleryItem);
+    });
+}
 
 // Create a gallery item
 function createGalleryItem(item, index, galleryType) {
@@ -385,3 +385,204 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize galleries when page loads
 window.addEventListener('DOMContentLoaded', initGalleries);
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Filter functionality
+    const filters = document.querySelectorAll('.tender-filter');
+    const tenderItems = document.querySelectorAll('.scroll-item');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', function () {
+            // Remove active class from all filters
+            filters.forEach(f => f.classList.remove('active'));
+            // Add active class to clicked filter
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            tenderItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Reset auto-scroll position when filtering
+            resetAutoScroll();
+        });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('tenderSearch');
+    const searchButton = document.querySelector('#tenderSearch + button');
+
+    const performSearch = () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        tenderItems.forEach(item => {
+            const itemText = item.textContent.toLowerCase();
+            if (itemText.includes(searchTerm)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Reset auto-scroll position when searching
+        resetAutoScroll();
+    };
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', function (e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // Auto-scroll functionality
+    const scrollContainer = document.getElementById('tendersContainer');
+    const scrollContent = document.getElementById('scrollContent');
+    let scrollPosition = 0;
+    let scrollInterval;
+    let isManualScrolling = false;
+    let scrollTimeout;
+    const scrollSpeed = 1; // pixels per interval
+    const scrollDelay = 50; // milliseconds between intervals
+    const resumeDelay = 3000; // milliseconds before resuming auto-scroll after manual interaction
+
+    function startAutoScroll() {
+        const containerHeight = scrollContainer.clientHeight;
+        const contentHeight = scrollContent.scrollHeight;
+
+        // Only start scrolling if content is taller than container
+        if (contentHeight > containerHeight) {
+            clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+                if (!isManualScrolling) {
+                    scrollPosition += scrollSpeed;
+
+                    // Check if we've scrolled to the bottom
+                    if (scrollPosition >= contentHeight - containerHeight) {
+                        // Reset to top smoothly
+                        scrollPosition = 0;
+                        scrollContent.style.transition = 'transform 1s ease-out';
+                        scrollContent.style.transform = `translateY(-${scrollPosition}px)`;
+
+                        // After resetting, remove transition for smooth continuous scrolling
+                        setTimeout(() => {
+                            scrollContent.style.transition = 'none';
+                        }, 1000);
+                    } else {
+                        // Normal scrolling
+                        scrollContent.style.transform = `translateY(-${scrollPosition}px)`;
+                    }
+                }
+            }, scrollDelay);
+        }
+    }
+
+    function resetAutoScroll() {
+        // Stop current scrolling
+        clearInterval(scrollInterval);
+
+        // Reset position
+        scrollPosition = 0;
+        scrollContent.style.transition = 'transform 0.5s ease-out';
+        scrollContent.style.transform = 'translateY(0)';
+
+        // After reset, start scrolling again
+        setTimeout(() => {
+            scrollContent.style.transition = 'transform 0.5s ease-out';
+            startAutoScroll();
+        }, 500);
+    }
+
+    // Pause on hover
+    scrollContainer.addEventListener('mouseenter', () => {
+        clearInterval(scrollInterval);
+        scrollContent.style.transition = 'transform 0.2s ease-out';
+    });
+
+    // Resume when mouse leaves
+    scrollContainer.addEventListener('mouseleave', () => {
+        startAutoScroll();
+    });
+
+    // Mouse wheel scrolling
+    scrollContainer.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        const containerHeight = scrollContainer.clientHeight;
+        const contentHeight = scrollContent.scrollHeight;
+        const maxScroll = contentHeight - containerHeight;
+
+        // Calculate new scroll position
+        scrollPosition += e.deltaY * 0.5; // Reduce scroll speed for better control
+
+        // Constrain scroll position
+        scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+
+        // Apply the scroll
+        scrollContent.style.transform = `translateY(-${scrollPosition}px)`;
+
+        // Set manual scrolling state
+        isManualScrolling = true;
+        scrollContent.style.transition = 'transform 0.1s ease-out';
+
+        // Clear any pending timeout
+        clearTimeout(scrollTimeout);
+
+        // Set timeout to resume auto-scrolling
+        scrollTimeout = setTimeout(() => {
+            isManualScrolling = false;
+            startAutoScroll();
+        }, resumeDelay);
+    });
+
+    // Touch support for mobile devices
+    let touchStartY = 0;
+    let touchMoveY = 0;
+
+    scrollContainer.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        isManualScrolling = true;
+        clearInterval(scrollInterval);
+        scrollContent.style.transition = 'transform 0.1s ease-out';
+    });
+
+    scrollContainer.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        touchMoveY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchMoveY;
+
+        const containerHeight = scrollContainer.clientHeight;
+        const contentHeight = scrollContent.scrollHeight;
+        const maxScroll = contentHeight - containerHeight;
+
+        // Calculate new scroll position
+        scrollPosition = deltaY;
+
+        // Constrain scroll position
+        scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+
+        // Apply the scroll
+        scrollContent.style.transform = `translateY(-${scrollPosition}px)`;
+
+        // Clear any pending timeout
+        clearTimeout(scrollTimeout);
+    });
+
+    scrollContainer.addEventListener('touchend', () => {
+        // Set timeout to resume auto-scrolling
+        scrollTimeout = setTimeout(() => {
+            isManualScrolling = false;
+            startAutoScroll();
+        }, resumeDelay);
+    });
+
+    // Initialize auto-scroll
+    startAutoScroll();
+});
