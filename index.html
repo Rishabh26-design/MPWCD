@@ -79,7 +79,8 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
-            <div class="container" style="background-color: rgb(78 39 116) ; border-radius: 25px;">
+            <div class="container"
+                style=" border-radius: 25px; background-image: url(asset/nav_bg.jpg); background-size: cover;">
 
 
 
@@ -214,6 +215,7 @@
                 aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -226,6 +228,10 @@
             </div>
             <div class="carousel-item">
                 <img src="asset/Slide_3.jpg" class="d-block w-100" alt="Beti Bachao Beti Padhao">
+
+            </div>
+            <div class="carousel-item">
+                <img src="asset/Slide_4.jpg" class="d-block w-100" alt="Beti Bachao Beti Padhao">
 
             </div>
         </div>
@@ -248,8 +254,11 @@
                 <div class="col-sm-10">
                     <div class="news-ticker">
                         <div class="ticker-content">
+                            <img src="asset/new.gif" alt="News Icon" class="me-1" style="width: 50px; height: 20px;">
                             <span>New PMMVY benefits increased to ₹5,000 - Apply before 30 Nov!</span>
+                            <i class="fas fa-circle mx-1" style="font-size: 0.6rem;"></i>
                             <span>Anganwadi recruitment 2024 notifications released.</span>
+                            <img src="asset/new.gif" alt="News Icon" class="me-1" style="width: 50px; height: 20px;">
                             <span>Workshop on child nutrition on 15th December at Bhopal.</span>
                         </div>
                     </div>
@@ -258,12 +267,44 @@
         </div>
     </div>
 
-
-    <section class="py-4 Section-fade "
+    <section class="py-4 Section-fade bg-light" style="background-color: rgb(238, 236, 249);">
+        <div class="container">
+            <div class="row justify-content-center gap-4 mt-4 mt-md-0 p-2">
+                <div class=" col-md-4 col-6 shadow card shadow">
+                    <div class="d-flex align-items-center p-3">
+                        <img src="asset/CM.png" alt="Portrait of Narendra Modi wearing brown vest and white kurta"
+                            class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
+                        <div class="ms-3 text-start flex-grow-1 px-1">
+                            <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
+                                Dr. Mohan Yadav</p>
+                            <p class="mb-0" style="font-size: 0.875rem;"><strong>Hon'ble Chief Minister
+                                </strong><br> Madhya Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-4 col-6 shadow card shadow">
+                    <div class="d-flex align-items-center p-3 ">
+                        <img src="asset/Mantri.png" alt="Portrait of Narendra Modi wearing brown vest and white kurta"
+                            class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
+                        <div class="ms-3 text-start flex-grow-1 px-1">
+                            <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
+                                Mrs. Nirmala Bhuria</p>
+                            <p class="mb-0" style="font-size: 0.875rem;">
+                                <strong>Hon'ble Minister </strong><br>
+                                Women and Child Development, Madhya Pradesh
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <section class="py-4 Section-fade "
         style="background-color: rgb(238, 236, 249); background-image: url(asset/par-bg.png); background-size: cover;">
-        <div class="container py-4 px-4">
+            <div class="container py-5 px-4">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-12">
                     <h2 class="mb-4 about-title">About Us</h2>
                     <!-- <h2 class="mb-4 about-title" lang="hi">हमारे बारे में</h2> -->
 
@@ -292,39 +333,14 @@
                         विभाग निरंतर विकास की चुनौतियों का समाधान करने के लिए प्रतिबद्ध है।
                     </p>
                 </div>
-                <div class="col-md-1 d-none d-md-block">
-                </div>
-                <div class="col-md-4 col-12  row d-flex flex-column align-items-end gap-4 mt-4 mt-md-0">
-                    <div class="card shadow" style="width: 100%;">
-                        <div class="d-flex align-items-center p-3">
-                            <img src="asset/CM.png" alt="Portrait of Narendra Modi wearing brown vest and white kurta"
-                                class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
-                            <div class="ms-3 text-start flex-grow-1 px-1">
-                                <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
-                                    Dr. Mohan Yadav</p>
-                                <p class="mb-0" style="font-size: 0.875rem;"><strong>Hon'ble Chief Minister
-                                    </strong><br> Madhya Pradesh</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow" style="width: 100%;">
-                        <div class="d-flex align-items-center p-3 ">
-                            <img src="asset/Mantri.png"
-                                alt="Portrait of Narendra Modi wearing brown vest and white kurta"
-                                class="rounded img-outline" style="width: 150px; height: 170px; object-fit: cover;" />
-                            <div class="ms-3 text-start flex-grow-1 px-1">
-                                <p class="mb-0 fw-bold" style="font-size: 1rem; color:#6059f6">
-                                    Mrs. Nirmala Bhuria</p>
-                                <p class="mb-0" style="font-size: 0.875rem;">
-                                    <strong>Hon'ble Minister </strong><br>
-                                    Women and Child Development, Madhya Pradesh
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- <div class="col-md-1 d-none d-md-block">
                 </div> -->
+
+                <!-- <div class="col-md-5 bg-light r" style="border-radius: 15px;">
+
+                </div> -->
+
+
             </div>
         </div>
 
@@ -713,6 +729,7 @@
     <section class="py-5 Section-fade" Style="background-color: rgba(91, 80, 150, 0.856);">
         <h4 class="text-center mb-4 text-white">Featured Schemes</h4>
         <div class="container bg-light pt-3 rounded">
+            <!-- <div class="col-md-7"> -->
             <div class="row mb-4">
                 <div class="col-md-4">
                     <div class="btn-group w-100" role="group">
@@ -790,6 +807,7 @@
                 </table>
             </div>
         </div>
+        </div>
     </section>
     <button id="backToTopBtn" class="btn btn-primary rounded-circle shadow" title="Go to top">
         <i class="fas fa-arrow-up"></i>
@@ -837,7 +855,7 @@
         </div>
     </section>
 
-    <section class="py-3 Section-fade" style="background-color: rgb(238, 236, 249);">
+    <section class="py-3 Section-fade p-4" style="background-color: rgb(238, 236, 249);">
         <div class="container">
             <h4 class="text-center mt-2 text-primary">Other Department Portal</h4>
             <div class="logo-slider-container">
