@@ -1269,3 +1269,137 @@ h1 {
         top: 1rem;
     }
 }
+
+
+.icon-box {
+    background: white;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    user-select: none;
+}
+
+.icon-bg {
+    width: 130px;
+    height: 96px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    font-size: 3.5rem;
+}
+
+.text-label {
+    color: #6b6b6b;
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+/* Hover states with related color changes */
+.icon-box:hover .icon-bg-ladli {
+    background-color: #f9e4c7 !important;
+    color: #d18f3a !important;
+    border: 2px solid #f9e4c7;
+}
+
+
+.icon-box:hover .text-ladli {
+    color: #d18f3a !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-pmkvy {
+    background-color: #a9d9db !important;
+    color: #2a8b8f !important;
+}
+
+.icon-box:hover .text-pmkvy {
+    color: #2a8b8f !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-icds {
+    background-color: #a6c8e8 !important;
+    color: #2a6ca9 !important;
+}
+
+.icon-box:hover .text-icds {
+    color: #2a6ca9 !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-sabla {
+    background-color: #f3b9c7 !important;
+    color: #b31f4a !important;
+}
+
+.icon-box:hover .text-sabla {
+    color: #b31f4a !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-kishori {
+    background-color: #f9a9b7 !important;
+    color: #d31a3f !important;
+}
+
+.icon-box:hover .text-kishori {
+    color: #d31a3f !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-sukanya {
+    background-color: #cde6d3 !important;
+    color: #3a7a3f !important;
+}
+
+.icon-box:hover .text-sukanya {
+    color: #3a7a3f !important;
+    font-weight: 600;
+}
+
+.icon-box:hover .icon-bg-matritva {
+    background-color: #b3aaff !important;
+    color: #4a2db3 !important;
+}
+
+.icon-box:hover .text-matritva {
+    color: #4a2db3 !important;
+    font-weight: 600;
+}
+
+.view-more-btn {
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    /* margin-top: 1rem; */
+}
+
+.view-more-btn:hover {
+    background-color: #b7a4fc;
+    color: #212529;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.scheme-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+}
