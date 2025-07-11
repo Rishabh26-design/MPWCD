@@ -79,10 +79,10 @@ h6 {
     transform: translateY(-5px);
 }
 
-/* News Ticker */
 .news-ticker {
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .ticker-content {
@@ -91,8 +91,19 @@ h6 {
     animation: ticker 20s linear infinite;
 }
 
-.ticker-content span {
+.ticker-content:hover {
+    animation-play-state: paused;
+}
+
+.ticker-content a {
+    color: white;
+    text-decoration: none;
     margin-right: 3rem;
+    cursor: pointer;
+}
+
+.ticker-content a:hover {
+    text-decoration: underline;
 }
 
 @keyframes ticker {
@@ -1258,4 +1269,3 @@ h1 {
         top: 1rem;
     }
 }
-
