@@ -493,6 +493,10 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollContent.style.transition = 'transform 0.5s ease-out';
         scrollContent.style.transform = 'translateY(0)';
 
+        // Force reflow to ensure transition works
+    void scrollContent.offsetHeight;
+    
+
         // After reset, start scrolling again
         setTimeout(() => {
             scrollContent.style.transition = 'transform 0.5s ease-out';
@@ -588,26 +592,78 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-  // Page load transition
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.body.classList.add('loaded');
-            }, 100);
-            
-            // Intersection Observer for scroll animations
-            const sections = document.querySelectorAll('.section-fade');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-                sections.forEach(section => {
-                    observer.observe(section);
-                });
-            });
-            
+// Page load transition
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        document.body.classList.add('loaded');
+    }, 100);
 
-            
+    // Intersection Observer for scroll animations
+    const sections = document.querySelectorAll('.section-fade');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+
+// Function to format date and time in "DD Month YYYY, HH:MM:SS" format
+function formatDateTime(date) {
+    const options = {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        // second: '2-digit',
+        hour12: true
+    };
+    return date.toLocaleDateString('en-IN', options);
+}
+
+// Function to update time every second
+function updateDateTime() {
+    // Get either stored date or current date
+    const storedDate = localStorage.getItem('lastUpdated');
+    const lastUpdated = storedDate ? new Date(storedDate) : new Date();
+
+    // Format and display
+    document.getElementById('update-date-time').textContent = formatDateTime(lastUpdated);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Set initial last updated time (you can modify this to fetch from server)
+    const lastUpdated = new Date();
+    localStorage.setItem('lastUpdated', lastUpdated.toString());
+
+    // Initialize display
+    updateDateTime();
+
+    // Update time every second (optional)
+    setInterval(updateDateTime, 1000);
+
+    // Visitor counter
+    let visitorCount = localStorage.getItem('visitorCount') || 0;
+    visitorCount = parseInt(visitorCount) + 1;
+    localStorage.setItem('visitorCount', visitorCount);
+    document.getElementById('count').textContent = visitorCount.toLocaleString('en-IN');
+});
+
+// For actual content updates, you would call this when content changes:
+/*
+function contentUpdated() {
+    const updateTime = new Date();
+    localStorage.setItem('lastUpdated', updateTime.toString());
+    document.getElementById('update-date-time').textContent = formatDateTime(updateTime);
+    
+    // In a real implementation, you would also send this to your server
+    // fetch('/api/update-timestamp', { method: 'POST' });
+}
+*/

@@ -452,7 +452,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d7d7d7;
 }
 
 .tab-btn {
@@ -574,7 +574,7 @@ h1 {
 
 .close {
     position: absolute;
-    top: 20px;
+    top: 175px;
     right: 30px;
     color: white;
     font-size: 35px;
@@ -628,7 +628,7 @@ h1 {
     display: flex;
     gap: 10px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.027);
     border-radius: 8px;
     max-width: 90%;
     overflow-x: auto;
@@ -1389,8 +1389,8 @@ h1 {
 }
 
 .view-more-btn:hover {
-    background-color: #b7a4fc;
-    color: #212529;
+    background-color: #4a1a6f;
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
