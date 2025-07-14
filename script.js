@@ -494,8 +494,8 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollContent.style.transform = 'translateY(0)';
 
         // Force reflow to ensure transition works
-    void scrollContent.offsetHeight;
-    
+        void scrollContent.offsetHeight;
+
 
         // After reset, start scrolling again
         setTimeout(() => {

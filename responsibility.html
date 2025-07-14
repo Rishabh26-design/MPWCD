@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Women & Child Development</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Noto+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Custom CSS for sticky sidebar header */
+        .sidebar-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .sidebar-header {
+            position: sticky;
+            top: 820px;
+            /* Adjust this value based on your nav height */
+            z-index: 100;
+            background: white;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar-header {
+                top: 60px;
+                /* Smaller value for mobile */
+            }
+        }
+
+        /* Make navbar sticky */
+        .sticky-nav {
+            position: sticky;
+            top: 5rem;
+            z-index: 1020;
+        }
+
+        .hover-effect:hover {
+            background: #f8f9fa !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #2c3e50 !important;
+        }
+
+        .nv-link {
+            transition: all 0.3s ease;
+        }
+
+        .nv-link:hover {
+            transform: translateX(5px);
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-circle {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .icon-circle {
+            transform: scale(1.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .text-primary {
+            color: #3498db !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Header Section -->
+    <header class="headerbg text-dark p-1 "
+        style="background: linear-gradient(20deg,rgba(227, 230, 230, 1) 1%, rgba(188, 191, 191, 1) 100%);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center ">
+                    <a>
+                        <span lang="en">MPWCD</span>
+                        <span lang="hi">एमपीडब्ल्यूसीडी</span>
+                    </a>
+                </div>
+                <div>
+                    <button id="langToggle" class="btn btn btn-outline-dark p-0 me-2 px-2">हिंदी</button>
+                    <button id="login" class="btn btn btn-outline-dark p-0 px-2">
+                        <span lang="en">WCD Login</span>
+                        <span lang="hi">लॉगिन</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header with Navigation -->
+    <header class="sticky-top shadow-sm "
+        style="background-image: url(asset/header_BG.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="asset/MP_LOGO.png" alt="MP Government Logo" height="60" class="me-2">
+                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-4">
+
+                            <div>
+                                <h1 class="h5 fw-bold">
+                                    <span lang="en">Women & Child Development Department</span>
+                                    <span lang="hi">महिला एवं बाल विकास विभाग</span>
+                                </h1>
+                                <small class="text-dark">
+                                    <span lang="en">Government of Madhya Pradesh</span>
+                                    <span lang="hi">मध्यप्रदेश शासन</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="poshan-logo">
+                            <img src="asset/POSHAN_LOGO.png" alt="Poshan Abhiyan Logo" height="60">
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
+            <div class="container"
+                style=" border-radius: 25px; background-image: url(asset/nav_bg.jpg); background-size: cover;">
+                <div class="collapse navbar-collapse" id="topNavbar">
+                    <ul class="navbar-nav me-auto gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="fas fa-home nav-icon me-1"></i>
+                                <span lang="en">Home</span>
+                                <span lang="hi">मुख्य पृष्ठ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-info-circle nav-icon me-1"></i>
+                                <span lang="en">About Us</span>
+                                <span lang="hi">हमारे बारे में</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
+
+                                <li><a class="dropdown-item" href="normaldetails.html"><i
+                                            class="fas fa-female me-2"></i>
+                                        <span lang="en">Normal information</span>
+                                        <span lang="hi">सामान्य जानकारी</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="responsibility.html"><i class="fas fa-baby me-2"></i>
+                                        <span lang="en">Responcebilties</span>
+                                        <span lang="hi">विभाग के दायित्व</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-apple-alt me-2"></i>
+                                        <span lang="en">Departmental Structure</span>
+                                        <span lang="hi">विभागीय संरचना </span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
+                                        <span lang="en">
+                                            subordinate office</span>
+                                        <span lang="hi">अधीनस्थ कार्यालय</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="schemesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-project-diagram me-1"></i>
+                                <span lang="en">Schemes</span>
+                                <span lang="hi">योजनाएं</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Women Welfare</span>
+                                        <span lang="hi">महिला कल्याण</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-female me-2"></i>
+                                        <span lang="en">Ladli Laxmi Yojana</span>
+                                        <span lang="hi">लाडली लक्ष्मी योजना</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-baby me-2"></i>
+                                        <span lang="en">PMMVY</span>
+                                        <span lang="hi">प्रधानमंत्री मातृ वंदना योजना</span>
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Child Development</span>
+                                        <span lang="hi">बाल विकास</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-apple-alt me-2"></i>
+                                        <span lang="en">Poshan Abhiyan</span>
+                                        <span lang="hi">पोषण अभियान</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
+                                        <span lang="en">ICDS</span>
+                                        <span lang="hi">आईसीडीएस</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-graduation-cap me-2"></i>
+                                        <span lang="en">MP School Education Schemes</span>
+                                        <span lang="hi">एमपी स्कूल शिक्षा योजनाएं</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="institutionsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-university nav-icon me-1"></i>
+                                <span lang="en">Institutions</span>
+                                <span lang="hi">संस्थान</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="institutionsDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-house me-2"></i>
+                                        <span lang="en">Anganwadi Portal</span>
+                                        <span lang="hi">आंगनवाड़ी पोर्टल</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-hands-helping me-2"></i>
+                                        <span lang="en">Adoption Procedures</span>
+                                        <span lang="hi">गोद लेने की प्रक्रिया</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-phone-alt me-2"></i>
+                                        <span lang="en">Women Helpline</span>
+                                        <span lang="hi">महिला हेल्पलाइन</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-gavel nav-icon me-1"></i>
+                                <span lang="en">Acts</span>
+                                <span lang="hi">अधिनियम</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-book nav-icon me-1"></i>
+                                <span lang="en">Resources</span>
+                                <span lang="hi">संसाधन</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell nav-icon me-1"></i>
+                                <span lang="en">Notifications</span>
+                                <span lang="hi">सूचनाएं</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-images nav-icon me-1"></i>
+                                <span lang="en">Gallery</span>
+                                <span lang="hi">गैलरी</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-address-card nav-icon me-1"></i>
+                                <span lang="en">Contact Us</span>
+                                <span lang="hi">संपर्क करें</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="py-5 " Style="background-color: rgba(90, 80, 150, 0.938);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-start mb-4 text-light" style="font-size: 2.5rem;">विभाग के दायित्व</h1>
+                    <p class="text-start  text-light"> मध्यप्रदेश का महिला एवं बाल विकास विभाग महिलाओं और बच्चों के
+                        सामाजिक-आर्थिक स्वास्थ्य, पोषण एवं विकास के लिए प्रतिबद्ध है। इसके मुख्य उद्देश्यों में कुपोषण
+                        रोकना, महिला सशक्तिकरण, बाल कल्याण योजनाओं का क्रियान्वयन तथा महिलाओं के अधिकारों की रक्षा शामिल
+                        है। विभाग आईसीडीएस, महिला आयोग और महिला वित्त निगम जैसी योजनाएँ संचालित करता है, जिससे मातृ-शिशु
+                        मृत्यु दर घटे, शिक्षा व स्वास्थ्य सुधरे और महिलाएँ आत्मनिर्भर बनें।</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card shadow-sm mb-4 border-0" style="border-radius: 15px; overflow: hidden;">
+                        <div class="card-body p-4">
+                            <div id="responsibilities" class="mb-5 pt-3">
+                                <h2 class="h4 text-white border-bottom pb-2 mb-3 px-3 py-2 rounded"
+                                    style="background: linear-gradient(135deg,  #ff9f43, #feca57);">
+                                    <i class="fas fa-clipboard-check me-2"></i>दायित्व :-
+                                </h2>
+                                <div class="bg-light p-4 rounded mb-4 shadow-sm"
+                                    style="background: linear-gradient(to right, #fff9e6, white); border-left: 5px solid #feca57;">
+                                    <h3 class="h5 text-primary">दायित्व निम्नानुसार है</h3>
+                                    <div class="ps-3">
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #feca57;">♦</span> प्रदेश की महिलाओं की सामाजिक,
+                                            आर्थिक,
+                                            स्वास्थ्य व पोषण की स्थिति में सुधार लाना।</p>
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #feca57;">♦</span> बच्चों के शारीरिक, मानसिक, बौद्धिक
+                                            विकास के साथ स्वास्थ्य व पोषण की स्थिति में सुधार लाना तथा उन्हें कुपोषण
+                                            से
+                                            बचाना।</p>
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #feca57;">♦</span> महिलाओं के संवैधानिक हितों को
+                                            सुरक्षित
+                                            रखना, महिलाओं के कल्याण, सुरक्षा से संबंधित कानूनों एवं विभिन्न योजनाओं
+                                            और
+                                            सामाजिक कुरीतियों केप्रति जागरूकता बढ़ाना।</p>
+                                    </div>
+                                </div>
+                                <div class="bg-light p-4 rounded shadow-sm"
+                                    style="background: linear-gradient(to right, #fff0e6, white); border-left: 5px solid #ff9f43;">
+                                    <h3 class="h5 text-primary">लोक प्राधिकरण के मुख्य कृत्य</h3>
+                                    <div class="ps-3">
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #ff9f43;">♦</span> समेकित बाल विकास सेवा का संचालन।
+                                        </p>
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #ff9f43;">♦</span> महिलाओं और बच्चों के लिये शासकीय
+                                            संस्थाओं का संचालन, अशासकीय संस्थाओं को अनुदान प्रदान करना।</p>
+                                        <p class="mb-2 d-flex align-items-start"><span class="me-2"
+                                                style="color: #ff9f43;">♦</span> महिलाओं के आर्थिक विकास के लिए
+                                            मध्यप्रदेश महिला वित्त विकास निगम का संचालन।</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=" bg-dark  Section-fade text-white pt-5 pb-3"
+        style="background-image: url(asset/Footer_BG.jpg); background-position: center; background-size:cover">
+        <div class="container">
+            <div class="row g-4 p-3">
+                <div class="col-md-4 col-12">
+                    <h5 class="pb-2 fw-bold text-warning">
+                        <span lang="en">Contact</span>
+                        <span lang="hi">संपर्क करें</span>
+                    </h5>
+                    <p><i class="fas fa-map-marker-alt text-warning me-2"></i>
+                        <span lang="en">Address: Plot No. 28A Vijayaraje Vatsalya Bhavan, Arera Hills, <br> Bhopal,
+                            Madhya Pradesh - 462011</span>
+                        <span lang="hi">प्लॉट नंबर 28ए विजयाराजे वात्सल्य भवन, अरेरा हिल्स, <br> भोपाल, मध्य प्रदेश
+                            -
+                            462011</span>
+                    </p>
+                    <p><i class="fas fa-phone text-warning me-2"></i>
+                        <span lang="en">Helpline: 1800-123-4567</span>
+                        <span lang="hi">हेल्पलाइन: 1800-123-4567</span>
+                    </p>
+                    <p><i class="fas fa-envelope text-warning me-2"></i>
+                        <span lang="en">Email: mpwcd@mp.gov.in</span>
+                        <span lang="hi">ईमेल: mpwcd@mp.gov.in</span>
+                    </p>
+
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5 class="text-warning mb-3">
+                        <span lang="en">Quick Links</span>
+                        <span lang="hi">त्वरित लिंक</span>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Home</span>
+                                <span lang="hi">मुखपृष्ठ</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Schemes</span>
+                                <span lang="hi">योजनाएं</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Grievance Portal</span>
+                                <span lang="hi">शिकायत पोर्टल</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Downloads</span>
+                                <span lang="hi">डाउनलोड</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5 class="text-warning mb-3">
+                        <span lang="en">Helplines</span>
+                        <span lang="hi">हेल्पलाइन</span>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="tel:1098" class="text-white text-decoration-none">
+                                <i class="fas fa-phone text-warning me-2"></i>
+                                <span lang="en">Child Helpline: 1098</span>
+                                <span lang="hi">बाल हेल्पलाइन: 1098</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:181" class="text-white text-decoration-none">
+                                <i class="fas fa-phone text-warning me-2"></i>
+                                <span lang="en">Women Helpline: 181</span>
+                                <span lang="hi">महिला हेल्पलाइन: 181</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-shield-alt text-warning me-2"></i>
+                                <span lang="en">Cyber Crime Cell</span>
+                                <span lang="hi">साइबर क्राइम सेल</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0287375745656!2d77.4253779!3d23.242041300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4262a661c4c5%3A0xb52ce4a390a795da!2sDirectorate%20Women%20and%20Child%20Development%20(WCD)!5e0!3m2!1sen!2sin!4v1751972846725!5m2!1sen!2sin"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="visitor-counter" class="py-1 col-md-6 text-center text-md-start">
+                    <span lang="en" class="text-warning">Visitors Count : </span>
+                    <span lang="hi" class="text-warning">आगंतुकों की संख्या :</span>
+                    <span id="count">0</span>
+                </div>
+                <div id="last-update" class="py-1 col-md-6 text-center text-md-end">
+                    <span lang="en" class="text-warning">Last Updated : </span>
+                    <span lang="hi" class="text-warning">अंतिम अद्यतन :</span>
+                    <span id="update-date-time"></span>
+                </div>
+            </div>
+            <hr class="my-3 ">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        <span lang="en">&copy; 2025 MP Women & Child Development Department. All rights
+                            reserved.</span>
+                        <span lang="hi">&copy; 2025 मध्य प्रदेश महिला एवं बाल विकास विभाग। सर्वाधिकार
+                            सुरक्षित।</span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        <span lang="en">Designed & Developed by : </span>
+                        <span lang="hi">डिज़ाइन एवं विकास : </span>
+                        <a href="#" class="text-warning text-decoration-none">
+                            <span lang="en">MP NICSI & Uneecops Technologies Ltd.</span>
+                            <span lang="hi">मध्यप्रदेश एनआईसीएसआई एवं यूनिकॉप्स टेक्नोलॉजीज लिमिटेड</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

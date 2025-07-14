@@ -444,7 +444,9 @@ h1 {
     padding: 20px 0;
 }
 
-
+.navbar-toggler {
+    padding: 0.1rem !important;
+}
 
 
 
@@ -714,7 +716,7 @@ h1 {
 }
 
 .card-body {
-    padding-top: 0.5rem !important;
+    padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
 }
 
@@ -766,7 +768,7 @@ h1 {
 
 @media (max-width: 767.98px) {
     .navbar {
-        padding: 0.5rem 0;
+        padding: 0.1rem 0;
     }
 
     .navbar img {
@@ -1403,3 +1405,22 @@ h1 {
     text-align: center;
     font-weight: 600;
 }
+
+
+.nv-link {
+    color: rgb(78 39 116) !important;
+    text-decoration: none;
+}
+
+.nv-link:hover {
+    background-color: rgb(236, 235, 235) !important;
+    color: rgb(78 39 116) !important;
+    outline: 1px solid rgb(78 39 116) !important;
+}
+
+.nv-link.active {
+    color: rgb(78 39 116) !important;
+    background-color: rgb(236, 235, 235) !important;
+    border: 1px solid rgb(78 39 116) !important;
+}
+

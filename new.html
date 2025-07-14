@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Women & Child Development</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for sticky sidebar header */
+        .sidebar-container {
+            position: relative;
+        }
+        
+        .sidebar-header {
+            position: sticky;
+            top: 120px; /* Adjust this value based on your nav height */
+            z-index: 100;
+            background: white;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        @media (max-width: 991.98px) {
+            .sidebar-header {
+                top: 60px; /* Smaller value for mobile */
+            }
+        }
+        
+        /* Make navbar sticky */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-light text-dark py-1">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <a class="text-decoration-none text-dark">
+                        <span lang="en">MPWCD</span>
+                        <span lang="hi">एमपीडब्ल्यूसीडी</span>
+                    </a>
+                </div>
+                <div>
+                    <button id="langToggle" class="btn btn-outline-dark btn-sm me-2">हिंदी</button>
+                    <button id="login" class="btn btn-outline-dark btn-sm">
+                        <span lang="en">WCD Login</span>
+                        <span lang="hi">लॉगिन</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header with Navigation -->
+    <header class="sticky-nav shadow-sm" style="background-image: url(asset/header_BG.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="asset/MP_LOGO.png" alt="MP Government Logo" height="60" class="me-2">
+                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-4">
+
+                            <div>
+                                <h1 class="h5 fw-bold mb-0">
+                                    <span lang="en">Women & Child Development Department</span>
+                                    <span lang="hi">महिला एवं बाल विकास विभाग</span>
+                                </h1>
+                                <small class="text-dark">
+                                    <span lang="en">Government of Madhya Pradesh</span>
+                                    <span lang="hi">मध्यप्रदेश शासन</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="poshan-logo">
+                            <img src="asset/POSHAN_LOGO.png" alt="Poshan Abhiyan Logo" height="60">
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
+            <div class="container rounded-4" style="background-image: url(asset/nav_bg.jpg); background-size: cover;">
+                <div class="collapse navbar-collapse" id="topNavbar">
+                    <ul class="navbar-nav me-auto gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-home me-1"></i>
+                                <span lang="en">Home</span>
+                                <span lang="hi">मुख्य पृष्ठ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-info-circle me-1"></i>
+                                <span lang="en">About Us</span>
+                                <span lang="hi">हमारे बारे में</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="schemesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-project-diagram me-1"></i>
+                                <span lang="en">Schemes</span>
+                                <span lang="hi">योजनाएं</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Women Welfare</span>
+                                        <span lang="hi">महिला कल्याण</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-female me-2"></i>
+                                        <span lang="en">Ladli Laxmi Yojana</span>
+                                        <span lang="hi">लाडली लक्ष्मी योजना</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-baby me-2"></i>
+                                        <span lang="en">PMMVY</span>
+                                        <span lang="hi">प्रधानमंत्री मातृ वंदना योजना</span>
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Child Development</span>
+                                        <span lang="hi">बाल विकास</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-apple-alt me-2"></i>
+                                        <span lang="en">Poshan Abhiyan</span>
+                                        <span lang="hi">पोषण अभियान</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
+                                        <span lang="en">ICDS</span>
+                                        <span lang="hi">आईसीडीएस</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-graduation-cap me-2"></i>
+                                        <span lang="en">MP School Education Schemes</span>
+                                        <span lang="hi">एमपी स्कूल शिक्षा योजनाएं</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="institutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-university me-1"></i>
+                                <span lang="en">Institutions</span>
+                                <span lang="hi">संस्थान</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="institutionsDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-house me-2"></i>
+                                        <span lang="en">Anganwadi Portal</span>
+                                        <span lang="hi">आंगनवाड़ी पोर्टल</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-hands-helping me-2"></i>
+                                        <span lang="en">Adoption Procedures</span>
+                                        <span lang="hi">गोद लेने की प्रक्रिया</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-phone-alt me-2"></i>
+                                        <span lang="en">Women Helpline</span>
+                                        <span lang="hi">महिला हेल्पलाइन</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-gavel me-1"></i>
+                                <span lang="en">Acts</span>
+                                <span lang="hi">अधिनियम</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-book me-1"></i>
+                                <span lang="en">Resources</span>
+                                <span lang="hi">संसाधन</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell me-1"></i>
+                                <span lang="en">Notifications</span>
+                                <span lang="hi">सूचनाएं</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-images me-1"></i>
+                                <span lang="en">Gallery</span>
+                                <span lang="hi">गैलरी</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-address-card me-1"></i>
+                                <span lang="en">Contact Us</span>
+                                <span lang="hi">संपर्क करें</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0 sidebar-container">
+                    <!-- Sticky Sidebar Header -->
+                    <div class="sidebar-header">
+                        <h3 class="h5 text-primary border-bottom pb-2 mb-0">
+                            <i class="fas fa-list me-2"></i>विषय सूची
+                        </h3>
+                    </div>
+                    
+                    <div class="card shadow-sm">
+                        <div class="card-body pt-0">
+                            <div class="nav flex-column">
+                                <a href="#objectives" class="nav-link mb-2 rounded active bg-gradient text-white" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                                    <i class="fas fa-bullseye me-2"></i>विभाग के उद्देश्य
+                                </a>
+                                <a href="#mission" class="nav-link mb-2 rounded text-dark">
+                                    <i class="fas fa-eye me-2"></i>मिशन/विजन
+                                </a>
+                                <a href="#duties" class="nav-link mb-2 rounded text-dark">
+                                    <i class="fas fa-tasks me-2"></i>विभाग के कर्तव्य
+                                </a>
+                                <a href="#responsibilities" class="nav-link mb-2 rounded text-dark">
+                                    <i class="fas fa-clipboard-check me-2"></i>विभाग के दायित्व
+                                </a>
+                                <a href="#structure" class="nav-link mb-2 rounded text-dark">
+                                    <i class="fas fa-sitemap me-2"></i>विभागीय संरचना
+                                </a>
+                                <a href="#institutions" class="nav-link mb-2 rounded text-dark">
+                                    <i class="fas fa-building me-2"></i>अधीनस्थ कार्यालय
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <!-- Rest of your content remains the same -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div id="objectives" class="mb-5">
+                                <!-- Content remains same -->
+                            </div>
+                            <!-- Other sections remain same -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your HTML remains the same -->
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculate and set the top position for sidebar header dynamically
+            function updateSidebarHeaderPosition() {
+                const navHeight = document.querySelector('.sticky-nav').offsetHeight;
+                document.querySelector('.sidebar-header').style.top = navHeight + 'px';
+            }
+            
+            // Initial calculation
+            updateSidebarHeaderPosition();
+            
+            // Recalculate on window resize
+            window.addEventListener('resize', updateSidebarHeaderPosition);
+            
+            // Rest of your JavaScript remains the same
+        });
+    </script>
+</body>
+</html>
