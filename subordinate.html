@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Women & Child Development</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Noto+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --child-welfare: #3b82f6;
+            --women-welfare: #ec4899;
+            --shelter: #22c55e;
+            --training: #f59e0b;
+            --special: #a855f7;
+        }
+
+
+
+        .page-header {
+            background: linear-gradient(to right, var(--women-welfare), var(--child-welfare));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(to right, var(--women-welfare), var(--child-welfare)) 1;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            border: none;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border-bottom: none;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title {
+            font-weight: 700;
+            background: linear-gradient(to right, var(--child-welfare), var(--women-welfare));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+
+        .tag {
+            border-radius: 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 300;
+            padding: 0.25rem 0.75rem;
+        }
+
+        .child-welfare .tag {
+            background-color: #dbeafe;
+            color: var(--child-welfare);
+        }
+
+        .women-welfare .tag {
+            background-color: #fce7f3;
+            color: var(--women-welfare);
+        }
+
+        .shelter .tag {
+            background-color: #d1fae5;
+            color: var(--shelter);
+        }
+
+        .training .tag {
+            background-color: #fef3c7;
+            color: var(--training);
+        }
+
+        .special .tag {
+            background-color: #f3e8ff;
+            color: var(--special);
+        }
+
+        .activity-badge {
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+
+        .activity-badge:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            font-size: 0.875rem;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .stat-icon {
+            margin-right: 0.5rem;
+        }
+
+        .btn-primary {
+            border-radius: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            font-weight: 300;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .child-welfare .btn-primary {
+            background-color: var(--child-welfare);
+        }
+
+        .women-welfare .btn-primary {
+            background-color: var(--women-welfare);
+        }
+
+        .shelter .btn-primary {
+            background-color: var(--shelter);
+        }
+
+        .training .btn-primary {
+            background-color: var(--training);
+        }
+
+        .special .btn-primary {
+            background-color: var(--special);
+        }
+
+        .card-footer {
+            background-color: transparent;
+            border-top: 1px solid #eee;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        .footer-link {
+            color: var(--child-welfare);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--women-welfare);
+        }
+
+        .accordion-button {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            background-color: #f8f9fa;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #e9ecef;
+            color: var(--child-welfare);
+        }
+
+        .accordion-body {
+            padding: 1rem;
+            font-size: 0.875rem;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="headerbg text-dark p-1 "
+        style="background: linear-gradient(20deg,rgba(227, 230, 230, 1) 1%, rgba(188, 191, 191, 1) 100%);">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center ">
+                    <a>
+                        <span lang="en">MPWCD</span>
+                        <span lang="hi">एमपीडब्ल्यूसीडी</span>
+                    </a>
+                </div>
+                <div>
+                    <button id="langToggle" class="btn btn btn-outline-dark p-0 me-2 px-2">हिंदी</button>
+                    <button id="login" class="btn btn btn-outline-dark p-0 px-2">
+                        <span lang="en">WCD Login</span>
+                        <span lang="hi">लॉगिन</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header with Navigation -->
+    <header class="sticky-top shadow-sm "
+        style="background-image: url(asset/header_BG.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="asset/MP_LOGO.png" alt="MP Government Logo" height="60" class="me-2">
+                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-4">
+
+                            <div>
+                                <h1 class="h5 fw-bold">
+                                    <span lang="en">Women & Child Development Department</span>
+                                    <span lang="hi">महिला एवं बाल विकास विभाग</span>
+                                </h1>
+                                <small class="text-dark">
+                                    <span lang="en">Government of Madhya Pradesh</span>
+                                    <span lang="hi">मध्यप्रदेश शासन</span>
+                                </small>
+                            </div>
+                        </div>
+                        <div class="poshan-logo">
+                            <img src="asset/POSHAN_LOGO.png" alt="Poshan Abhiyan Logo" height="60">
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
+            <div class="container"
+                style=" border-radius: 25px; background-image: url(asset/nav_bg.jpg); background-size: cover;">
+                <div class="collapse navbar-collapse" id="topNavbar">
+                    <ul class="navbar-nav me-auto gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="fas fa-home nav-icon me-1"></i>
+                                <span lang="en">Home</span>
+                                <span lang="hi">मुख्य पृष्ठ</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-info-circle nav-icon me-1"></i>
+                                <span lang="en">About Us</span>
+                                <span lang="hi">हमारे बारे में</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
+
+                                <li><a class="dropdown-item" href="normaldetails.html"><i
+                                            class="fas fa-female me-2"></i>
+                                        <span lang="en">Normal information</span>
+                                        <span lang="hi">सामान्य जानकारी</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="responsibility.html"><i class="fas fa-baby me-2"></i>
+                                        <span lang="en">Responsibilities</span>
+                                        <span lang="hi">विभाग के दायित्व</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="deptstructure.html"><i
+                                            class="fas fa-apple-alt me-2"></i>
+                                        <span lang="en">Departmental Structure</span>
+                                        <span lang="hi">विभागीय संरचना </span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="subordinate.html"><i class="fas fa-school me-2"></i>
+                                        <span lang="en">
+                                            Subordinate Office</span>
+                                        <span lang="hi">अधीनस्थ कार्यालय</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="schemesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-project-diagram me-1"></i>
+                                <span lang="en">Schemes</span>
+                                <span lang="hi">योजनाएं</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Women Welfare</span>
+                                        <span lang="hi">महिला कल्याण</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-female me-2"></i>
+                                        <span lang="en">Ladli Laxmi Yojana</span>
+                                        <span lang="hi">लाडली लक्ष्मी योजना</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-baby me-2"></i>
+                                        <span lang="en">PMMVY</span>
+                                        <span lang="hi">प्रधानमंत्री मातृ वंदना योजना</span>
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <h6 class="dropdown-header">
+                                        <span lang="en">Child Development</span>
+                                        <span lang="hi">बाल विकास</span>
+                                    </h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-apple-alt me-2"></i>
+                                        <span lang="en">Poshan Abhiyan</span>
+                                        <span lang="hi">पोषण अभियान</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
+                                        <span lang="en">ICDS</span>
+                                        <span lang="hi">आईसीडीएस</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-graduation-cap me-2"></i>
+                                        <span lang="en">MP School Education Schemes</span>
+                                        <span lang="hi">एमपी स्कूल शिक्षा योजनाएं</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="institutionsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-university nav-icon me-1"></i>
+                                <span lang="en">Institutions</span>
+                                <span lang="hi">संस्थान</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="institutionsDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-house me-2"></i>
+                                        <span lang="en">Anganwadi Portal</span>
+                                        <span lang="hi">आंगनवाड़ी पोर्टल</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-hands-helping me-2"></i>
+                                        <span lang="en">Adoption Procedures</span>
+                                        <span lang="hi">गोद लेने की प्रक्रिया</span>
+                                    </a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-phone-alt me-2"></i>
+                                        <span lang="en">Women Helpline</span>
+                                        <span lang="hi">महिला हेल्पलाइन</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-gavel nav-icon me-1"></i>
+                                <span lang="en">Acts</span>
+                                <span lang="hi">अधिनियम</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-book nav-icon me-1"></i>
+                                <span lang="en">Resources</span>
+                                <span lang="hi">संसाधन</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell nav-icon me-1"></i>
+                                <span lang="en">Notifications</span>
+                                <span lang="hi">सूचनाएं</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-images nav-icon me-1"></i>
+                                <span lang="en">Gallery</span>
+                                <span lang="hi">गैलरी</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-address-card nav-icon me-1"></i>
+                                <span lang="en">Contact Us</span>
+                                <span lang="hi">संपर्क करें</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="py-5 " Style="background-color: rgba(90, 80, 150, 0.938);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-start mb-4 text-warning" style="font-size: 2.5rem;">अधीनस्थ कार्यालय</h1>
+                    <p class="text-start  text-light">महिला एवं बाल विकास विभाग द्वारा संचालित अधीनस्थ संस्थाएँ जैसे
+                        जवाहर बाल भवन, बाल संरक्षण गृह, अनुरक्षण गृह, नारी निकेतन, झूलाघर, सिलाई केन्द्र आदि का मुख्य
+                        उद्देश्य महिलाओं एवं बच्चों को सुरक्षा, शिक्षा, पोषण और कौशल विकास के माध्यम से सशक्त बनाना है।
+                        ये संस्थाएँ अनाथ, निराश्रित, कुपोषित एवं सामाजिक रूप से वंचित वर्गों को आवास, शिक्षा, प्रशिक्षण
+                        और पुनर्वास सुविधाएँ प्रदान करती हैं, ताकि वे आत्मनिर्भर बन सकें और समाज की मुख्यधारा से जुड़
+                        सकें।</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="py-5 bg-light" style="background-image: url(asset/New_bg.png); background-size: cover;">
+        <div class="container">
+        
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- 1. जवाहर बाल भवन -->
+                <div class="col">
+                    <div class="card child-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-child card-icon text-blue-500"></i>
+                            <h5 class="card-title">जवाहर बाल भवन</h5>
+                            <span class="tag">5-16 वर्ष</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> बच्चों की रचनात्मक क्षमताओं का
+                                विकास करना</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="activity-badge"><i class="fas fa-plane stat-icon"></i> एयरोमॉडलिंग</span>
+                                <span class="activity-badge"><i class="fas fa-music stat-icon"></i> संगीत</span>
+                                <span class="activity-badge"><i class="fas fa-dancing stat-icon"></i> नृत्य</span>
+                                <span class="activity-badge"><i class="fas fa-paint-brush stat-icon"></i>
+                                    चित्रकला</span>
+                                <span class="activity-badge"><i class="fas fa-thread stat-icon"></i> हस्तकला</span>
+                                <span class="activity-badge">+10 अन्य</span>
+                            </div>
+                            <div class="d-flex flex-wrap mb-3">
+                                <div class="stat-item"><i class="fas fa-clock stat-icon text-gray-600"></i> वर्षभर
+                                    प्रवेश</div>
+                                <div class="stat-item"><i class="fas fa-school stat-icon text-gray-600"></i> परीक्षा
+                                    मुक्त</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">गतिविधियाँ देखें</a>
+                            <a href="#" class="footer-link">समय सारणी</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. बाल संरक्षण गृह -->
+                <div class="col">
+                    <div class="card shelter h-100">
+                        <div class="card-header">
+                            <i class="fas fa-home card-icon text-green-500"></i>
+                            <h5 class="card-title">बाल संरक्षण गृह</h5>
+                            <span class="tag">कुष्ठ रोगियों के बच्चे</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> कुष्ठ रोगियों के स्वस्थ बच्चों को
+                                सामाजिक-शैक्षणिक संरक्षण</p>
+                            <div class="accordion mb-3" id="accordionShelter">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseShelter"
+                                            aria-expanded="false" aria-controls="collapseShelter">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 3 स्थान
+                                        </button>
+                                    </h2>
+                                    <div id="collapseShelter" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionShelter">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> उज्जैन</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> सिवनी</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> सीधी</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-male stat-icon text-gray-600"></i> 59 बच्चे
+                                </div>
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 30 क्षमता/गृह
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">प्रवेश नीति</a>
+                            <a href="#" class="footer-link">फोटो गैलरी</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. राजकीय बाल संरक्षण आश्रम -->
+                <div class="col">
+                    <div class="card shelter h-100">
+                        <div class="card-header">
+                            <i class="fas fa-hands-helping card-icon text-green-500"></i>
+                            <h5 class="card-title">राजकीय बाल संरक्षण आश्रम</h5>
+                            <span class="tag">अनाथ बच्चे</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>स्थान:</strong> इंदौर</p>
+                            <p class="text-gray-700 mb-3"><strong>लाभार्थी:</strong> 13 वर्ष तक के अनाथ/निराश्रित बच्चे
+                            </p>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 50 क्षमता
+                                </div>
+                                <div class="stat-item"><i class="fas fa-book stat-icon text-gray-600"></i> शिक्षा+आवास
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">प्रवेश प्रक्रिया</a>
+                            <a href="#" class="footer-link">संपर्क करें</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. बालवाड़ी सह संस्कार केन्द्र -->
+                <div class="col">
+                    <div class="card child-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-baby card-icon text-blue-500"></i>
+                            <h5 class="card-title">बालवाड़ी सह संस्कार केन्द्र</h5>
+                            <span class="tag">3-6 वर्ष</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> गरीब/मध्यम वर्ग के बच्चों को
+                                अनौपचारिक शिक्षा</p>
+                            <div class="accordion mb-3" id="accordionBalwadi">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseBalwadi"
+                                            aria-expanded="false" aria-controls="collapseBalwadi">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 6 स्थान
+                                        </button>
+                                    </h2>
+                                    <div id="collapseBalwadi" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionBalwadi">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> मंडला</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> बालाघाट</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> बुरहानपुर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> ग्वालियर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> रीवा</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> भोपाल</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-baby stat-icon text-gray-600"></i> 25-30
+                                    बच्चे/केंद्र</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">शैक्षणिक मॉडल</a>
+                            <a href="#" class="footer-link">स्थान देखें</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. शासकीय झूलाघर -->
+                <div class="col">
+                    <div class="card child-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-baby-carriage card-icon text-blue-500"></i>
+                            <h5 class="card-title">शासकीय झूलाघर</h5>
+                            <span class="tag">6 माह-6 वर्ष</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> कामकाजी महिलाओं के बच्चों की देखभाल
+                            </p>
+                            <div class="accordion mb-3" id="accordionCreche">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseCreche"
+                                            aria-expanded="false" aria-controls="collapseCreche">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 8 जिलों में
+                                        </button>
+                                    </h2>
+                                    <div id="collapseCreche" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionCreche">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> ग्वालियर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> सागर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> भोपाल</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> जबलपुर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> +4 अन्य</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-baby stat-icon text-gray-600"></i> 155 बच्चे
+                                </div>
+                                <div class="stat-item"><i class="fas fa-clock stat-icon text-gray-600"></i> 6-8 घंटे/दिन
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">नामांकन</a>
+                            <a href="#" class="footer-link">सुविधाएँ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. राजकीय अनुरक्षण गृह -->
+                <div class="col">
+                    <div class="card shelter h-100">
+                        <div class="card-header">
+                            <i class="fas fa-female card-icon text-green-500"></i>
+                            <h5 class="card-title">राजकीय अनुरक्षण गृह</h5>
+                            <span class="tag">13+ वर्ष बालिकाएँ</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>स्थान:</strong> ग्वालियर</p>
+                            <p class="text-gray-700 mb-3"><strong>लाभार्थी:</strong> अनाथालय/कुष्ठ गृह की किशोर बालिकाएँ
+                            </p>
+                            <div class="d-flex flex-wrap mb-3">
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 50 क्षमता
+                                </div>
+                                <div class="stat-item"><i class="fas fa-user stat-icon text-gray-600"></i> 21 निवासी
+                                </div>
+                            </div>
+                            <p class="text-gray-700"><strong>सुविधाएँ:</strong> शिक्षा, प्रशिक्षण, पुनर्वास</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">व्यवसायिक पाठ्यक्रम</a>
+                            <a href="#" class="footer-link">फंडिंग विवरण</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. नारी निकेतन -->
+                <div class="col">
+                    <div class="card women-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-female card-icon text-pink-500"></i>
+                            <h5 class="card-title">नारी निकेतन</h5>
+                            <span class="tag">पुनर्वास</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>लाभार्थी:</strong> विधवा, परित्यक्ता, प्रताड़ित
+                                महिलाएँ (7 वर्ष तक के बच्चों सहित)</p>
+                            <div class="accordion mb-3" id="accordionNariNiketan">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseNariNiketan"
+                                            aria-expanded="false" aria-controls="collapseNariNiketan">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 4 स्थान
+                                        </button>
+                                    </h2>
+                                    <div id="collapseNariNiketan" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionNariNiketan">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> सतना</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> उज्जैन</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> भोपाल</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> ग्वालियर</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-user stat-icon text-gray-600"></i> 35 महिलाएँ
+                                </div>
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 50
+                                    क्षमता/केंद्र</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">आवेदन प्रक्रिया</a>
+                            <a href="#" class="footer-link">सफलता कहानियाँ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. अल्पकालीन आवास गृह -->
+                <div class="col">
+                    <div class="card women-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-house-user card-icon text-pink-500"></i>
+                            <h5 class="card-title">अल्पकालीन आवास गृह</h5>
+                            <span class="tag">न्यायालय संदर्भित</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> न्यायालय द्वारा भेजी गई महिलाओं को
+                                अस्थायी आवास</p>
+                            <div class="accordion mb-3" id="accordionShortStay">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseShortStay"
+                                            aria-expanded="false" aria-controls="collapseShortStay">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 2 स्थान
+                                        </button>
+                                    </h2>
+                                    <div id="collapseShortStay" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionShortStay">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> रीवा</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> जबलपुर</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-user stat-icon text-gray-600"></i> 5 महिलाएँ
+                                </div>
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 50 क्षमता/गृह
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">सहायता योजनाएँ</a>
+                            <a href="#" class="footer-link">कानूनी सलाह</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. महिला उद्धार गृह -->
+                <div class="col">
+                    <div class="card special h-100">
+                        <div class="card-header">
+                            <i class="fas fa-heart card-icon text-purple-500"></i>
+                            <h5 class="card-title">महिला उद्धार गृह</h5>
+                            <span class="tag">नैतिक सुधार</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>स्थान:</strong> इंदौर</p>
+                            <p class="text-gray-700 mb-3"><strong>लाभार्थी:</strong> इम्मोरल ट्रैफिक एक्ट के तहत
+                                न्यायालय द्वारा भेजी गई महिलाएँ</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-home stat-icon text-gray-600"></i> 50 क्षमता
+                                </div>
+                                <div class="stat-item"><i class="fas fa-sync-alt stat-icon text-gray-600"></i> पुनर्वास
+                                    कार्यक्रम</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">सुधार योजनाएँ</a>
+                            <a href="#" class="footer-link">वार्षिक रिपोर्ट</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. शासकीय सिलाई केंद्र -->
+                <div class="col">
+                    <div class="card training h-100">
+                        <div class="card-header">
+                            <i class="fas fa-cut card-icon text-yellow-500"></i>
+                            <h5 class="card-title">शासकीय सिलाई केंद्र</h5>
+                            <span class="tag">कौशल विकास</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> महिलाओं को सिलाई-कढ़ाई प्रशिक्षण
+                                द्वारा आत्मनिर्भर बनाना</p>
+                            <div class="accordion mb-3" id="accordionSewing">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSewing"
+                                            aria-expanded="false" aria-controls="collapseSewing">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 19 जिलों में
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSewing" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionSewing">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> बैतूल, धार, भोपाल</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> रीवा, सतना, छतरपुर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> +13 अन्य जिले</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-thread stat-icon text-gray-600"></i> 570
+                                    प्रशिक्षणार्थी</div>
+                                <div class="stat-item"><i class="fas fa-graduation-cap stat-icon text-gray-600"></i>
+                                    5वीं पास पात्रता</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">पाठ्यक्रम विवरण</a>
+                            <a href="#" class="footer-link">केंद्र सूची</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. महिला वसति गृह -->
+                <div class="col">
+                    <div class="card women-welfare h-100">
+                        <div class="card-header">
+                            <i class="fas fa-building card-icon text-pink-500"></i>
+                            <h5 class="card-title">महिला वसति गृह</h5>
+                            <span class="tag">आवासीय सुविधा</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <p class="text-gray-700 mb-3"><strong>उद्देश्य:</strong> नौकरी/शिक्षा हेतु बाहर रहने वाली
+                                महिलाओं को सुरक्षित आवास</p>
+                            <div class="accordion mb-3" id="accordionHostel">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseHostel"
+                                            aria-expanded="false" aria-controls="collapseHostel">
+                                            <i class="fas fa-map-marker-alt me-2"></i> 2 स्थान
+                                        </button>
+                                    </h2>
+                                    <div id="collapseHostel" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionHostel">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> इंदौर</li>
+                                                <li><i class="fas fa-circle fa-xs me-2"></i> जबलपुर</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <div class="stat-item"><i class="fas fa-user stat-icon text-gray-600"></i> 38 निवासी
+                                </div>
+                                <div class="stat-item"><i class="fas fa-graduation-cap stat-icon text-gray-600"></i>
+                                    छात्राओं को प्राथमिकता</div>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <a href="#" class="btn btn-primary btn-sm">आवास नियम</a>
+                            <a href="#" class="footer-link">शुल्क संरचना</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class=" bg-dark  Section-fade text-white pt-5 pb-3"
+        style="background-image: url(asset/Footer_BG.jpg); background-position: center; background-size:cover">
+        <div class="container">
+            <div class="row g-4 p-3">
+                <div class="col-md-4 col-12">
+                    <h5 class="pb-2 fw-bold text-warning">
+                        <span lang="en">Contact</span>
+                        <span lang="hi">संपर्क करें</span>
+                    </h5>
+                    <p><i class="fas fa-map-marker-alt text-warning me-2"></i>
+                        <span lang="en">Address: Plot No. 28A Vijayaraje Vatsalya Bhavan, Arera Hills, <br> Bhopal,
+                            Madhya Pradesh - 462011</span>
+                        <span lang="hi">प्लॉट नंबर 28ए विजयाराजे वात्सल्य भवन, अरेरा हिल्स, <br> भोपाल, मध्य प्रदेश
+                            -
+                            462011</span>
+                    </p>
+                    <p><i class="fas fa-phone text-warning me-2"></i>
+                        <span lang="en">Helpline: 1800-123-4567</span>
+                        <span lang="hi">हेल्पलाइन: 1800-123-4567</span>
+                    </p>
+                    <p><i class="fas fa-envelope text-warning me-2"></i>
+                        <span lang="en">Email: mpwcd@mp.gov.in</span>
+                        <span lang="hi">ईमेल: mpwcd@mp.gov.in</span>
+                    </p>
+
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5 class="text-warning mb-3">
+                        <span lang="en">Quick Links</span>
+                        <span lang="hi">त्वरित लिंक</span>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Home</span>
+                                <span lang="hi">मुखपृष्ठ</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Schemes</span>
+                                <span lang="hi">योजनाएं</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Grievance Portal</span>
+                                <span lang="hi">शिकायत पोर्टल</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-link text-warning me-2"></i>
+                                <span lang="en">Downloads</span>
+                                <span lang="hi">डाउनलोड</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-6">
+                    <h5 class="text-warning mb-3">
+                        <span lang="en">Helplines</span>
+                        <span lang="hi">हेल्पलाइन</span>
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="tel:1098" class="text-white text-decoration-none">
+                                <i class="fas fa-phone text-warning me-2"></i>
+                                <span lang="en">Child Helpline: 1098</span>
+                                <span lang="hi">बाल हेल्पलाइन: 1098</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="tel:181" class="text-white text-decoration-none">
+                                <i class="fas fa-phone text-warning me-2"></i>
+                                <span lang="en">Women Helpline: 181</span>
+                                <span lang="hi">महिला हेल्पलाइन: 181</span>
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-white text-decoration-none">
+                                <i class="fas fa-shield-alt text-warning me-2"></i>
+                                <span lang="en">Cyber Crime Cell</span>
+                                <span lang="hi">साइबर क्राइम सेल</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0287375745656!2d77.4253779!3d23.242041300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4262a661c4c5%3A0xb52ce4a390a795da!2sDirectorate%20Women%20and%20Child%20Development%20(WCD)!5e0!3m2!1sen!2sin!4v1751972846725!5m2!1sen!2sin"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="visitor-counter" class="py-1 col-md-6 text-center text-md-start">
+                    <span lang="en" class="text-warning">Visitors Count : </span>
+                    <span lang="hi" class="text-warning">आगंतुकों की संख्या :</span>
+                    <span id="count">0</span>
+                </div>
+                <div id="last-update" class="py-1 col-md-6 text-center text-md-end">
+                    <span lang="en" class="text-warning">Last Updated : </span>
+                    <span lang="hi" class="text-warning">अंतिम अद्यतन :</span>
+                    <span id="update-date-time"></span>
+                </div>
+            </div>
+            <hr class="my-3 ">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        <span lang="en">&copy; 2025 MP Women & Child Development Department. All rights
+                            reserved.</span>
+                        <span lang="hi">&copy; 2025 मध्य प्रदेश महिला एवं बाल विकास विभाग। सर्वाधिकार
+                            सुरक्षित।</span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        <span lang="en">Designed & Developed by : </span>
+                        <span lang="hi">डिज़ाइन एवं विकास : </span>
+                        <a href="#" class="text-warning text-decoration-none">
+                            <span lang="en">MP NICSI & Uneecops Technologies Ltd.</span>
+                            <span lang="hi">मध्यप्रदेश एनआईसीएसआई एवं यूनिकॉप्स टेक्नोलॉजीज लिमिटेड</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle language
+        document.getElementById('langToggle').addEventListener('click', function () {
+            const isHindiActive = document.body.classList.toggle('hindi-active');
+            this.textContent = isHindiActive ? 'English' : 'हिंदी';
+            localStorage.setItem('dashboardLanguage', isHindiActive ? 'hi' : 'en');
+            updateChartLabels(isHindiActive);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set initial last updated time (you can modify this to fetch from server)
+            const lastUpdated = new Date();
+            localStorage.setItem('lastUpdated', lastUpdated.toString());
+
+            // Initialize display
+            updateDateTime();
+
+            // Update time every second (optional)
+            setInterval(updateDateTime, 1000);
+
+            // Visitor counter
+            let visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount = parseInt(visitorCount) + 1;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('count').textContent = visitorCount.toLocaleString('en-IN');
+        });
+
+        // Function to format date and time in "DD Month YYYY, HH:MM:SS" format
+        function formatDateTime(date) {
+            const options = {
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                // second: '2-digit',
+                hour12: true
+            };
+            return date.toLocaleDateString('en-IN', options);
+        }
+
+        // Function to update time every second
+        function updateDateTime() {
+            // Get either stored date or current date
+            const storedDate = localStorage.getItem('lastUpdated');
+            const lastUpdated = storedDate ? new Date(storedDate) : new Date();
+
+            // Format and display
+            document.getElementById('update-date-time').textContent = formatDateTime(lastUpdated);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set initial last updated time (you can modify this to fetch from server)
+            const lastUpdated = new Date();
+            localStorage.setItem('lastUpdated', lastUpdated.toString());
+
+            // Initialize display
+            updateDateTime();
+
+            // Update time every second (optional)
+            setInterval(updateDateTime, 1000);
+
+            // Visitor counter
+            let visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount = parseInt(visitorCount) + 1;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('count').textContent = visitorCount.toLocaleString('en-IN');
+        });
+
+
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

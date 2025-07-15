@@ -186,11 +186,12 @@
                                         <span lang="en">Responcebilties</span>
                                         <span lang="hi">विभाग के दायित्व</span>
                                     </a></li>
-                                <li><a class="dropdown-item" href="deptstructure.html"><i class="fas fa-apple-alt me-2"></i>
+                                <li><a class="dropdown-item" href="deptstructure.html"><i
+                                            class="fas fa-apple-alt me-2"></i>
                                         <span lang="en">Departmental Structure</span>
                                         <span lang="hi">विभागीय संरचना </span>
                                     </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
+                                <li><a class="dropdown-item" href="subordinate.html"><i class="fas fa-school me-2"></i>
                                         <span lang="en">
                                             Subordinate Office</span>
                                         <span lang="hi">अधीनस्थ कार्यालय</span>
@@ -324,7 +325,7 @@
 
 
     <!-- Main Content -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light" style="background-image: url(asset/New_bg.png); background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12 mb-4">
@@ -541,6 +542,77 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Toggle language
+        document.getElementById('langToggle').addEventListener('click', function () {
+            const isHindiActive = document.body.classList.toggle('hindi-active');
+            this.textContent = isHindiActive ? 'English' : 'हिंदी';
+            localStorage.setItem('dashboardLanguage', isHindiActive ? 'hi' : 'en');
+            updateChartLabels(isHindiActive);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set initial last updated time (you can modify this to fetch from server)
+            const lastUpdated = new Date();
+            localStorage.setItem('lastUpdated', lastUpdated.toString());
+
+            // Initialize display
+            updateDateTime();
+
+            // Update time every second (optional)
+            setInterval(updateDateTime, 1000);
+
+            // Visitor counter
+            let visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount = parseInt(visitorCount) + 1;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('count').textContent = visitorCount.toLocaleString('en-IN');
+        });
+
+        // Function to format date and time in "DD Month YYYY, HH:MM:SS" format
+        function formatDateTime(date) {
+            const options = {
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                // second: '2-digit',
+                hour12: true
+            };
+            return date.toLocaleDateString('en-IN', options);
+        }
+
+        // Function to update time every second
+        function updateDateTime() {
+            // Get either stored date or current date
+            const storedDate = localStorage.getItem('lastUpdated');
+            const lastUpdated = storedDate ? new Date(storedDate) : new Date();
+
+            // Format and display
+            document.getElementById('update-date-time').textContent = formatDateTime(lastUpdated);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set initial last updated time (you can modify this to fetch from server)
+            const lastUpdated = new Date();
+            localStorage.setItem('lastUpdated', lastUpdated.toString());
+
+            // Initialize display
+            updateDateTime();
+
+            // Update time every second (optional)
+            setInterval(updateDateTime, 1000);
+
+            // Visitor counter
+            let visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount = parseInt(visitorCount) + 1;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('count').textContent = visitorCount.toLocaleString('en-IN');
+        });
+
+
+    </script>
 
 
     <!-- Bootstrap JS Bundle with Popper -->

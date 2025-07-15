@@ -242,7 +242,7 @@ body.hindi-active [lang="hi"] {
     .dropdown-item {
         padding-left: 2rem !important;
     }
-
+  
     .dropdown-toggle::after {
         float: right;
         margin-top: 0.5rem;
