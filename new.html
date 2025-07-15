@@ -1,295 +1,473 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP Women & Child Development</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>विभागीय संरचना - महिला एवं बाल विकास, मध्य प्रदेश</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom CSS for sticky sidebar header */
-        .sidebar-container {
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .org-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
             position: relative;
         }
-        
-        .sidebar-header {
-            position: sticky;
-            top: 120px; /* Adjust this value based on your nav height */
-            z-index: 100;
-            background: white;
-            padding: 10px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        @media (max-width: 991.98px) {
-            .sidebar-header {
-                top: 60px; /* Smaller value for mobile */
-            }
-        }
-        
-        /* Make navbar sticky */
-        .sticky-nav {
-            position: sticky;
+        .level-ribbon {
+            position: absolute;
             top: 0;
-            z-index: 1020;
+            left: 0;
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 8px 0 8px 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .org-title {
+            color: #0d6efd;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+        .org-title:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: #0d6efd;
+            border-radius: 5px;
+        }
+        .position-card {
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .position-count {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+        .hierarchy-line {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .hierarchy-line:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        .hierarchy-line:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.2rem;
+            width: 1rem;
+            height: 2px;
+            background-color: #dee2e6;
+        }
+        .position-name {
+            font-weight: 500;
+            color: #343a40;
+        }
+        .hindi-text {
+            font-family: 'Nirmala UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .level-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-level {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #6c757d;
+            color: white;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .card-level-1 {
+            background-color: #0d6efd;
+        }
+        .card-level-2 {
+            background-color: #198754;
+        }
+        .card-level-3 {
+            background-color: #fd7e14;
+        }
+        .card-level-4 {
+            background-color: #6f42c1;
+        }
+        .card-level-5 {
+            background-color: #d63384;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header class="bg-light text-dark py-1">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center">
-                    <a class="text-decoration-none text-dark">
-                        <span lang="en">MPWCD</span>
-                        <span lang="hi">एमपीडब्ल्यूसीडी</span>
-                    </a>
-                </div>
-                <div>
-                    <button id="langToggle" class="btn btn-outline-dark btn-sm me-2">हिंदी</button>
-                    <button id="login" class="btn btn-outline-dark btn-sm">
-                        <span lang="en">WCD Login</span>
-                        <span lang="hi">लॉगिन</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Header with Navigation -->
-    <header class="sticky-nav shadow-sm" style="background-image: url(asset/header_BG.jpg); background-repeat: no-repeat; background-size: cover;">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                        <div class="d-flex align-items-center mt-3">
-                            <img src="asset/MP_LOGO.png" alt="MP Government Logo" height="60" class="me-2">
-                            <img src="asset/WCD_LOGO.png" alt="MP Government Logo" height="60" class="me-4">
-
-                            <div>
-                                <h1 class="h5 fw-bold mb-0">
-                                    <span lang="en">Women & Child Development Department</span>
-                                    <span lang="hi">महिला एवं बाल विकास विभाग</span>
-                                </h1>
-                                <small class="text-dark">
-                                    <span lang="en">Government of Madhya Pradesh</span>
-                                    <span lang="hi">मध्यप्रदेश शासन</span>
-                                </small>
-                            </div>
-                        </div>
-                        <div class="poshan-logo">
-                            <img src="asset/POSHAN_LOGO.png" alt="Poshan Abhiyan Logo" height="60">
-                        </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </div>
-            </nav>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary hindi-text">विभागीय संरचना</h1>
+            <p class="lead hindi-text">महिला एवं बाल विकास विभाग, मध्य प्रदेश</p>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark position-relative pt-1 mt-2">
-            <div class="container rounded-4" style="background-image: url(asset/nav_bg.jpg); background-size: cover;">
-                <div class="collapse navbar-collapse" id="topNavbar">
-                    <ul class="navbar-nav me-auto gap-2">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <i class="fas fa-home me-1"></i>
-                                <span lang="en">Home</span>
-                                <span lang="hi">मुख्य पृष्ठ</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-info-circle me-1"></i>
-                                <span lang="en">About Us</span>
-                                <span lang="hi">हमारे बारे में</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="schemesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-project-diagram me-1"></i>
-                                <span lang="en">Schemes</span>
-                                <span lang="hi">योजनाएं</span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
-                                <li>
-                                    <h6 class="dropdown-header">
-                                        <span lang="en">Women Welfare</span>
-                                        <span lang="hi">महिला कल्याण</span>
-                                    </h6>
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-female me-2"></i>
-                                        <span lang="en">Ladli Laxmi Yojana</span>
-                                        <span lang="hi">लाडली लक्ष्मी योजना</span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-baby me-2"></i>
-                                        <span lang="en">PMMVY</span>
-                                        <span lang="hi">प्रधानमंत्री मातृ वंदना योजना</span>
-                                    </a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <h6 class="dropdown-header">
-                                        <span lang="en">Child Development</span>
-                                        <span lang="hi">बाल विकास</span>
-                                    </h6>
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-apple-alt me-2"></i>
-                                        <span lang="en">Poshan Abhiyan</span>
-                                        <span lang="hi">पोषण अभियान</span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-school me-2"></i>
-                                        <span lang="en">ICDS</span>
-                                        <span lang="hi">आईसीडीएस</span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-graduation-cap me-2"></i>
-                                        <span lang="en">MP School Education Schemes</span>
-                                        <span lang="hi">एमपी स्कूल शिक्षा योजनाएं</span>
-                                    </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="institutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-university me-1"></i>
-                                <span lang="en">Institutions</span>
-                                <span lang="hi">संस्थान</span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="institutionsDropdown">
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-laptop-house me-2"></i>
-                                        <span lang="en">Anganwadi Portal</span>
-                                        <span lang="hi">आंगनवाड़ी पोर्टल</span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-hands-helping me-2"></i>
-                                        <span lang="en">Adoption Procedures</span>
-                                        <span lang="hi">गोद लेने की प्रक्रिया</span>
-                                    </a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-phone-alt me-2"></i>
-                                        <span lang="en">Women Helpline</span>
-                                        <span lang="hi">महिला हेल्पलाइन</span>
-                                    </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-gavel me-1"></i>
-                                <span lang="en">Acts</span>
-                                <span lang="hi">अधिनियम</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-book me-1"></i>
-                                <span lang="en">Resources</span>
-                                <span lang="hi">संसाधन</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-bell me-1"></i>
-                                <span lang="en">Notifications</span>
-                                <span lang="hi">सूचनाएं</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-images me-1"></i>
-                                <span lang="en">Gallery</span>
-                                <span lang="hi">गैलरी</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-address-card me-1"></i>
-                                <span lang="en">Contact Us</span>
-                                <span lang="hi">संपर्क करें</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <!-- Level 1: शासन स्तर -->
+        <div class="org-section">
+            <div class="level-ribbon hindi-text">स्तर 1</div>
+            <div class="section-header">
+                <span class="level-number">1</span>
+                <h2 class="org-title hindi-text">
+                    <i class="fas fa-landmark me-2"></i>शासन स्तर
+                </h2>
             </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0 sidebar-container">
-                    <!-- Sticky Sidebar Header -->
-                    <div class="sidebar-header">
-                        <h3 class="h5 text-primary border-bottom pb-2 mb-0">
-                            <i class="fas fa-list me-2"></i>विषय सूची
-                        </h3>
-                    </div>
-                    
-                    <div class="card shadow-sm">
-                        <div class="card-body pt-0">
-                            <div class="nav flex-column">
-                                <a href="#objectives" class="nav-link mb-2 rounded active bg-gradient text-white" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-                                    <i class="fas fa-bullseye me-2"></i>विभाग के उद्देश्य
-                                </a>
-                                <a href="#mission" class="nav-link mb-2 rounded text-dark">
-                                    <i class="fas fa-eye me-2"></i>मिशन/विजन
-                                </a>
-                                <a href="#duties" class="nav-link mb-2 rounded text-dark">
-                                    <i class="fas fa-tasks me-2"></i>विभाग के कर्तव्य
-                                </a>
-                                <a href="#responsibilities" class="nav-link mb-2 rounded text-dark">
-                                    <i class="fas fa-clipboard-check me-2"></i>विभाग के दायित्व
-                                </a>
-                                <a href="#structure" class="nav-link mb-2 rounded text-dark">
-                                    <i class="fas fa-sitemap me-2"></i>विभागीय संरचना
-                                </a>
-                                <a href="#institutions" class="nav-link mb-2 rounded text-dark">
-                                    <i class="fas fa-building me-2"></i>अधीनस्थ कार्यालय
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-8">
-                    <!-- Rest of your content remains the same -->
-                    <div class="card shadow-sm mb-4">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-1">L1.1</span>
                         <div class="card-body">
-                            <div id="objectives" class="mb-5">
-                                <!-- Content remains same -->
-                            </div>
-                            <!-- Other sections remain same -->
+                            <div class="level-ribbon hindi-text">1</div>
+                            <h5 class="position-name fw-semibold text-center">प्रमुख सचिव </h5>
+                            <p class="text-muted  text-center mb-0 hindi-text">शीर्ष प्रशासनिक प्राधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-1">L1.2</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">अपर सचिव / सचिव <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">वरिष्ठ प्रशासनिक अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-1">L1.3</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">उप सचिव <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">मध्यस्तरीय प्रशासनिक अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-1">L1.4</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">अवर सचिव <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">कनिष्ठ प्रशासनिक अधिकारी</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Rest of your HTML remains the same -->
+        <!-- Level 2: संचालनालय महिला एवं बाल विकास -->
+        <div class="org-section">
+            <div class="level-ribbon hindi-text">स्तर 2</div>
+            <div class="section-header">
+                <span class="level-number">2</span>
+                <h2 class="org-title hindi-text">
+                    <i class="fas fa-building me-2"></i>संचालनालय महिला एवं बाल विकास
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.1</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">आयुक्त (आई.ए.एस.) <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">संचालनालय प्रमुख</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.2</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">अपर संचालक <span class="position-count">5</span></h5>
+                            <p class="text-muted mb-0 hindi-text">वरिष्ठ संचालनालय अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.3</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">संयुक्त संचालक <span class="position-count">8</span></h5>
+                            <p class="text-muted mb-0 hindi-text">मध्यस्तरीय संचालनालय अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.4</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">उप संचालक <span class="position-count">10</span></h5>
+                            <p class="text-muted mb-0 hindi-text">कनिष्ठ संचालनालय अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.5</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">सहायक संचालक <span class="position-count">15</span></h5>
+                            <p class="text-muted mb-0 hindi-text">प्रवेश स्तरीय संचालनालय अधिकारी</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-2">L2.6</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">लेखाधिकारी <span class="position-count">2</span></h5>
+                            <p class="text-muted mb-0 hindi-text">वित्तीय प्रबंधन</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card position-card">
+                        <span class="card-level card-level-2">L2.7</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">कार्यालयीन अमला</h5>
+                            <p class="text-muted mb-0 hindi-text">सहायक प्रशासनिक कर्मचारी</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
+        <!-- Level 3: अटल बिहारी वाजपेयी बाल आरोग्य एवं पोषण मिशन -->
+        <div class="org-section">
+            <div class="level-ribbon hindi-text">स्तर 3</div>
+            <div class="section-header">
+                <span class="level-number">3</span>
+                <h2 class="org-title hindi-text">
+                    <i class="fas fa-heartbeat me-2"></i>अटल बिहारी वाजपेयी बाल आरोग्य एवं पोषण मिशन
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-3">L3.1</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">संयुक्त संचालक <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">मिशन प्रमुख</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card position-card h-100">
+                        <span class="card-level card-level-3">L3.2</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">वित्त सलाहकार <span class="position-count">1</span></h5>
+                            <p class="text-muted mb-0 hindi-text">वित्तीय मार्गदर्शन</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card position-card">
+                        <span class="card-level card-level-3">L3.3</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">कार्यालयीन अमला</h5>
+                            <p class="text-muted mb-0 hindi-text">सहायक प्रशासनिक कर्मचारी</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level 4: संभाग से आंगनबाड़ी स्तर तक -->
+        <div class="org-section">
+            <div class="level-ribbon hindi-text">स्तर 4</div>
+            <div class="section-header">
+                <span class="level-number">4</span>
+                <h2 class="org-title hindi-text">
+                    <i class="fas fa-sitemap me-2"></i>संभाग से आंगनबाड़ी स्तर तक
+                </h2>
+            </div>
+            <div class="hierarchy-line ps-4 mb-4">
+                <div class="card position-card mb-3">
+                    <span class="card-level card-level-4">L4.1</span>
+                    <div class="card-body">
+                        <h5 class="position-name hindi-text">संभागीय संयुक्त संचालक <span class="position-count">10</span></h5>
+                        <p class="text-muted mb-0 hindi-text">संभाग स्तरीय नेतृत्व</p>
+                    </div>
+                </div>
+
+                <div class="hierarchy-line ps-4 mb-4">
+                    <div class="card position-card mb-3">
+                        <span class="card-level card-level-4">L4.2</span>
+                        <div class="card-body">
+                            <h5 class="position-name hindi-text">संभागीय उप संचालक <span class="position-count">10</span></h5>
+                            <p class="text-muted mb-0 hindi-text">संभाग स्तरीय प्रबंधन</p>
+                        </div>
+                    </div>
+
+                    <div class="hierarchy-line ps-4 mb-4">
+                        <div class="card position-card mb-3">
+                            <span class="card-level card-level-4">L4.3</span>
+                            <div class="card-body">
+                                <h5 class="position-name hindi-text">संभागीय सहायक संचालक <span class="position-count">10</span></h5>
+                                <p class="text-muted mb-0 hindi-text">संभाग स्तरीय समन्वय</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.4</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">जिला कार्यक्रम अधिकारी <span class="position-count">51</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">जिला स्तरीय कार्यान्वयन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.5</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">जिला महिला सशक्तिकरण अधिकारी <span class="position-count">51</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">महिला कार्यक्रम समन्वय</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.6</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">सहायक संचालक बाल भवन <span class="position-count">6</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">बाल भवन प्रबंधन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.7</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">अधिक्षक (आईसीपीएस) <span class="position-count">28</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">समेकित बाल संरक्षण योजना</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.8</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">सहायक संचालक (संस्थाए) <span class="position-count">22</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">संस्थागत प्रबंधन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.9</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">बाल विकास परियोजना अधिकारी <span class="position-count">453</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">परियोजना कार्यान्वयन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.10</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">परिवीक्षा अधिकारी (आई.सी.पी.एस.) <span class="position-count">26</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">बाल संरक्षण पर्यवेक्षण</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.11</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">सहायक संखियकी अधिकारी <span class="position-count">378</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">सांख्यिकीय प्रबंधन</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.12</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">सहायक परियोजना अधिकारी <span class="position-count">108</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">परियोजना सहायक</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card position-card h-100">
+                                    <span class="card-level card-level-4">L4.13</span>
+                                    <div class="card-body">
+                                        <h5 class="position-name hindi-text">पर्यवेक्षक <span class="position-count">3,409</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">क्षेत्र पर्यवेक्षण</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card position-card bg-light">
+                                    <span class="card-level card-level-4">L4.14</span>
+                                    <div class="card-body text-center">
+                                        <h5 class="position-name hindi-text">आंगनवाड़ी कार्यकर्ता <span class="position-count">97,135</span></h5>
+                                        <p class="text-muted mb-0 hindi-text">जमीनी स्तर पर कार्यान्वयन</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 text-muted hindi-text">
+            <p>अंतिम अद्यतन: जुलाई 2023 | महिला एवं बाल विकास विभाग, मध्य प्रदेश शासन</p>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Calculate and set the top position for sidebar header dynamically
-            function updateSidebarHeaderPosition() {
-                const navHeight = document.querySelector('.sticky-nav').offsetHeight;
-                document.querySelector('.sidebar-header').style.top = navHeight + 'px';
-            }
-            
-            // Initial calculation
-            updateSidebarHeaderPosition();
-            
-            // Recalculate on window resize
-            window.addEventListener('resize', updateSidebarHeaderPosition);
-            
-            // Rest of your JavaScript remains the same
-        });
-    </script>
 </body>
 </html>
