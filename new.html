@@ -1,32 +1,580 @@
-<!-- Modal 2 -->
-<div id="modal2" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
-        <div class="scheme-details">
-            <h2>Laadli Laxmi Yojana</h2>
-            <span class="scheme-type state-type">Madhya Pradesh State Scheme</span>
+<!DOCTYPE html>
+<html lang="en">
 
-            <div class="detail-item">
-                <h3>Description</h3>
-                <p>A flagship scheme of MP government to improve birth rate of girls, their health and education.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        @charset "utf-8";
+        /* CSS Document */
+
+        /******* Common Element CSS Start ******/
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            /* background: linear-gradient(135deg, #f5f7fa 0%, #e6e6e6 100%); */
+            background-image: url(asset/BG_LOGIN.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            height: 900px;
+            overflow: hidden;
+        }
+
+        .main {
+            margin: 0px auto;
+            width: 800px;
+            height: 800px;
+            position: relative;
+        }
+
+        .big-circle {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border: 3px solid #6495f2;
+            border-radius: 50%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            animation: Rotate 120s linear infinite;
+            -webkit-animation: Rotate 120s linear infinite;
+        }
+
+        .icon-block {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            background-image: linear-gradient(180deg, #4967e6 0%, #627bf4 100%);
+            -webkit-background-image: linear-gradient(180deg, #4967e6 0%, #627bf4 100%);
+            box-shadow: 0 2px 4px 0 #3e5ada;
+            -webkit-box-shadow: 0 2px 4px 0 #3e5ada;
+        }
+
+        .icon-block img {
+            margin: 0px auto;
+            width: 86%;
+            animation: Rotate-reverse 120s linear infinite;
+            -webkit-animation: Rotate-reverse 120s linear infinite;
+        }
+
+        .icon-block:first-child {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+
+        .icon-block:nth-child(2) {
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+            -webkit-transform: translate(50%, -50%);
+        }
+
+        .icon-block:nth-child(3) {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            -webkit-transform: translate(-50%, 50%);
+        }
+
+        .icon-block:nth-child(4) {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+
+        /* circle content */
+        .circle {
+            animation: circle-rotate 120s linear infinite;
+            -webkit-animation: circle-rotate 120s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            width: 90%;
+            height: 90%;
+            border: 3px solid #6495f2;
+            border-radius: 50%;
+        }
+
+        .circle .icon-block img {
+            animation: img-rotate 120s linear infinite;
+            -webkit-animation: img-rotate 120s linear infinite;
+        }
+
+        /* Login Form Styles */
+        .login-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            width: 400px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logos img {
+            height: 60px;
+            margin: 0 15px;
+        }
+
+        .login-form h1 {
+            color: #3f5de1;
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .login-form p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .login-form .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .login-form .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .login-form .input-group input:focus {
+            border-color: #3f5de1;
+            box-shadow: 0 0 5px rgba(63, 93, 225, 0.3);
+        }
+
+        .login-form .input-group label {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            color: #999;
+            font-size: 16px;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .login-form .input-group input:focus+label,
+        .login-form .input-group input:valid+label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            background: white;
+            padding: 0 5px;
+            color: #3f5de1;
+        }
+
+        /* Updated Captcha Styles */
+        .captcha-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .captcha-code {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-align: center;
+            background: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            color: #333;
+            user-select: none;
+            background-image: linear-gradient(to right, #f5f5f5, #e0e0e0);
+            border: 1px dashed #ccc;
+        }
+
+        .refresh-captcha {
+            background: #3f5de1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .refresh-captcha:hover {
+            background: #2c4ac7;
+        }
+
+        .captcha-input {
+            flex: 1;
+        }
+
+        .captcha-input input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background: #3f5de1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-form button:hover {
+            background: #2c4ac7;
+        }
+
+        .login-form .forgot-password {
+            display: block;
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .login-form .forgot-password:hover {
+            color: #3f5de1;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            text-align: left;
+            display: none;
+        }
+
+        /* keyframe animation */
+        @keyframes Rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes Rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes Rotate-reverse {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        @-webkit-keyframes Rotate-reverse {
+            from {
+                -webkit-transform: rotate(360deg);
+            }
+
+            to {
+                -webkit-transform: rotate(0deg);
+            }
+        }
+
+        @keyframes circle-rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(405deg);
+            }
+        }
+
+        @-webkit-keyframes circle-rotate {
+            from {
+                -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            to {
+                -webkit-transform: translate(-50%, -50%) rotate(405deg);
+            }
+        }
+
+        @keyframes img-rotate {
+            from {
+                transform: rotate(-45deg);
+            }
+
+            to {
+                transform: rotate(-405deg);
+            }
+        }
+
+        @-webkit-keyframes img-rotate {
+            from {
+                -webkit-transform: rotate(-45deg);
+            }
+
+            to {
+                -webkit-transform: rotate(-405deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main-container">
+        <div class="main">
+            <div class="big-circle">
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/web-dev-icon.png"
+                        alt="web design icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/game-design-icon.png"
+                        alt="game design icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/game-dev-icon.png" alt="game dev icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/ui-ux-icon.png" alt="ui-ux icon" />
+                </div>
+            </div>
+            <div class="circle">
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/app-icon.png" alt="app icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/blockchain-icon.png"
+                        alt="blockchain icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/arvr-icon.png" alt="ar-vr icon" />
+                </div>
+                <div class="icon-block">
+                    <img src="https://www.yudiz.com/codepen/animated-portfolio/artificial-intelligence-icon.png"
+                        alt="artificial intelligence icon" />
+                </div>
             </div>
 
-            <div class="detail-item">
-                <h3>Key Benefits</h3>
-                <ul>
-                    <li>₹30,000 fixed deposit in girl's name at birth</li>
-                    <li>Annual scholarships for education</li>
-                    <li>₹1 lakh at age 21 if completing 12th grade</li>
-                    <li>Free medical treatment up to ₹25,000</li>
-                </ul>
+            <!-- Login Form -->
+            <div class="login-form">
+                <div class="logos">
+                    <!-- Replace these with actual government logos -->
+                    <img src="asset/MP_LOGO.png" alt="National Emblem">
+                    <img src="asset/WCD_LOGO.png" alt="MP Government Logo">
+                </div>
+                <h1>Women & Child Development Department</h1>
+                <p>Government of Madhya Pradesh</p>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="text" id="username" required>
+                        <label for="username">Username</label>
+                        <div class="error-message" id="username-error">Please enter username</div>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                        <div class="error-message" id="password-error">Please enter password</div>
+                    </div>
+                    <div class="captcha-row">
+                        <div class="captcha-container">
+                            <div class="captcha-code" id="captcha"></div>
+                            <button type="button" class="refresh-captcha" id="refreshCaptcha" title="Refresh Captcha">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                        <div class="captcha-input">
+                            <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+                        </div>
+                    </div>
+                    <div class="error-message" id="captcha-error" style="margin-top: -15px; margin-bottom: 10px;"></div>
+                    <button type="submit" id="loginBtn">Login</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </form>
             </div>
-
-            <div class="detail-item">
-                <h3>Eligibility</h3>
-                <p>Girl children born in MP after 1st April 2006 to families with annual income less than ₹2 lakh.</p>
-            </div>
-
-            <button class="action-btn">Download Application Form</button>
         </div>
-    </div>
-</div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Generate random CAPTCHA
+            function generateCaptcha() {
+                const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                let captcha = '';
+                for (let i = 0; i < 6; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+
+            // Display CAPTCHA
+            let currentCaptcha = generateCaptcha();
+            document.getElementById('captcha').textContent = currentCaptcha;
+
+            // Refresh CAPTCHA
+            document.getElementById('refreshCaptcha').addEventListener('click', function () {
+                currentCaptcha = generateCaptcha();
+                document.getElementById('captcha').textContent = currentCaptcha;
+                document.getElementById('captchaInput').value = '';
+            });
+
+            // Form validation
+            // document.getElementById('loginForm').addEventListener('submit', function (e) {
+            //     e.preventDefault();
+
+            //     let isValid = true;
+            //     const username = document.getElementById('username').value.trim();
+            //     const password = document.getElementById('password').value.trim();
+            //     const captchaInput = document.getElementById('captchaInput').value.trim();
+
+            //     // Validate username
+            //     if (username === '') {
+            //         document.getElementById('username-error').style.display = 'block';
+            //         isValid = false;
+            //     } else {
+            //         document.getElementById('username-error').style.display = 'none';
+            //     }
+
+            //     // Validate password
+            //     if (password === '') {
+            //         document.getElementById('password-error').style.display = 'block';
+            //         isValid = false;
+            //     } else {
+            //         document.getElementById('password-error').style.display = 'none';
+            //     }
+
+            //     // Validate CAPTCHA
+            //     if (captchaInput === '') {
+            //         document.getElementById('captcha-error').textContent = 'Please enter CAPTCHA';
+            //         document.getElementById('captcha-error').style.display = 'block';
+            //         isValid = false;
+            //     } else if (captchaInput !== currentCaptcha) {
+            //         document.getElementById('captcha-error').textContent = 'Invalid CAPTCHA';
+            //         document.getElementById('captcha-error').style.display = 'block';
+            //         isValid = false;
+            //     } else {
+            //         document.getElementById('captcha-error').style.display = 'none';
+            //     }
+
+            //     // If all valid, submit form (in real app, you would send to server here)
+            //     if (isValid) {
+            //         alert('Login successful! (This is a demo)');
+            //         // Reset form
+            //         this.reset();
+            //         // Generate new CAPTCHA
+            //         currentCaptcha = generateCaptcha();
+            //         document.getElementById('captcha').textContent = currentCaptcha;
+            //     }
+            // });
+
+            // // Input field validation on blur
+            // document.getElementById('username').addEventListener('blur', function () {
+            //     if (this.value.trim() === '') {
+            //         document.getElementById('username-error').style.display = 'block';
+            //     } else {
+            //         document.getElementById('username-error').style.display = 'none';
+            //     }
+            // });
+
+            // document.getElementById('password').addEventListener('blur', function () {
+            //     if (this.value.trim() === '') {
+            //         document.getElementById('password-error').style.display = 'block';
+            //     } else {
+            //         document.getElementById('password-error').style.display = 'none';
+            //     }
+            // });
+
+            // document.getElementById('captchaInput').addEventListener('blur', function () {
+            //     if (this.value.trim() === '') {
+            //         document.getElementById('captcha-error').textContent = 'Please enter CAPTCHA';
+            //         document.getElementById('captcha-error').style.display = 'block';
+            //     } else if (this.value.trim() !== currentCaptcha) {
+            //         document.getElementById('captcha-error').textContent = 'Invalid CAPTCHA';
+            //         document.getElementById('captcha-error').style.display = 'block';
+            //     } else {
+            //         document.getElementById('captcha-error').style.display = 'none';
+            //     }
+            // });
+        });
+    </script>
+</body>
+
+</html>

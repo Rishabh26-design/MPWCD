@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +14,7 @@
       --error-color: #dc3545;
       --success-color: #28a745;
     }
-    
+
     body {
       /* background: linear-gradient(135deg, #f5f7fa 0%, #e6e6e6 100%); */
       background-image: url(asset/BG_LOGIN.png);
@@ -22,17 +23,20 @@
       background-position: center;
       min-height: 100vh;
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      
     }
-    
+
     .login-card {
       max-width: 420px;
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      background-color: #fff;
+      background-color: #ffffffaf;
       overflow: hidden;
       transition: all 0.3s ease;
+ 
+
     }
-    
+
     .login-header {
       background-color: var(--primary-color);
       background-image: url(asset/Login_bg.png);
@@ -42,31 +46,33 @@
       color: white;
       padding: 1.5rem;
       text-align: center;
+      
     }
-    
+
     .login-header h1 {
       font-weight: 700;
       font-size: 1.35rem;
       margin-bottom: 0.25rem;
-      text-shadow: 2px 4px 2px rgba(0,0,0,0.6);
+      text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.6);
     }
-    
+
     .login-header p {
       font-size: 1rem;
       opacity: 0.9;
       margin-bottom: 0;
       /* text-shadow: 2px 4px 2px rgba(0,0,0,0.6); */
     }
-    
+
     .login-body {
       padding: 2rem;
+      
     }
-    
+
     .form-control:focus {
       box-shadow: 0 0 0 0.25rem rgba(30, 30, 168, 0.15);
       border-color: var(--primary-color);
     }
-    
+
     .btn-login {
       background-color: var(--primary-color);
       color: white;
@@ -76,32 +82,32 @@
       transition: all 0.3s ease;
       letter-spacing: 0.5px;
     }
-    
+
     .btn-login:hover {
       background-color: rgb(57, 17, 97);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(30, 30, 168, 0.2);
       color: white;
     }
-    
+
     .captcha-container {
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
-    
+
     .captcha-display {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       border: 1px dashed #adb5bd;
       padding: 0.5rem 1rem;
       border-radius: 6px;
       font-family: 'Courier New', monospace;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 800;
+      letter-spacing: 3px;
       user-select: none;
       color: var(--primary-color);
     }
-    
+
     .refresh-btn {
       background: none;
       border: none;
@@ -109,36 +115,36 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .refresh-btn:hover {
       color: var(--primary-color);
       transform: rotate(180deg);
     }
-    
+
     .logo-container {
       display: flex;
       justify-content: center;
       gap: 1rem;
       margin-bottom: 1rem;
     }
-    
+
     .logo {
       width: 75px;
       height: 75px;
       object-fit: contain;
       /* filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.452)); */
     }
-    
+
     .password-toggle {
       cursor: pointer;
       color: #6c757d;
       transition: color 0.2s;
     }
-    
+
     .password-toggle:hover {
       color: var(--primary-color);
     }
-    
+
     /* Loading spinner */
     .spinner-border {
       width: 1rem;
@@ -146,7 +152,7 @@
       border-width: 0.15em;
       display: none;
     }
-    
+
     /* Animation for invalid shake */
     /* @keyframes shake {
       0%, 100% { transform: translateX(0); }
@@ -164,7 +170,7 @@
         margin: 0 1rem;
         max-width: 95%;
       }
-      
+
       .login-body {
         padding: 1.5rem;
       }
@@ -240,62 +246,43 @@
         font-size: 0.9rem;
       }
     }
-    .form-control{
-        padding: 0.7rem 0.75rem !important;
+
+    .form-control {
+      padding: 0.7rem 0.75rem !important;
     }
-    
   </style>
 </head>
+
 <body>
   <main class="d-flex align-items-center justify-content-center min-vh-100 p-3">
     <div class="login-card">
       <header class="login-header">
         <div class="logo-container">
-          <img
-            src="asset/MP_LOGO.png"
-            alt="Government of Madhya Pradesh"
-            class="logo"
-          />
-          <img
-            src="asset/WCD_LOGO.png"
-            alt="Women & Child Development Department Logo"
-            class="logo"
-          />
+          <img src="asset/MP_LOGO.png" alt="Government of Madhya Pradesh" class="logo" />
+          <img src="asset/WCD_LOGO.png" alt="Women & Child Development Department Logo" class="logo" />
         </div>
         <h1>Women & Child Development Department</h1>
         <p>Government of Madhya Pradesh</p>
-      </header>
-      
+      </header> 
+
       <div class="login-body">
         <form id="loginForm" autocomplete="off" novalidate>
           <div class="mb-3">
             <label for="username" class="form-label fw-semibold">Username</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                name="username"
-                placeholder="Enter your username"
-                required
-              />
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                required />
               <!-- <div class="invalid-feedback">Please enter a valid username</div> -->
             </div>
           </div>
-          
+
           <div class="mb-3">
             <label for="password" class="form-label fw-semibold">Password</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                required
-              />
+              <input type="password" class="form-control" id="password" name="password"
+                placeholder="Enter your password" required />
               <span class="input-group-text password-toggle" id="togglePassword">
                 <i class="fas fa-eye"></i>
               </span>
@@ -305,26 +292,21 @@
               <a href="#forgot-password" class="text-decoration-none" style="font-size: 0.8rem;">Forgot password?</a>
             </div>
           </div>
-          
+
           <div class="mb-3">
-            <label for="captcha" class="form-label fw-semibold">Captcha Verification</label>
+            <!-- <label for="captcha" class="form-label fw-semibold">Captcha Verification</label> -->
             <div class="d-flex align-items-center gap-3">
-              <input
-                type="text"
-                class="form-control"
-                id="captcha"
-                name="captcha"
-                placeholder="Enter captcha"
-                required
-              />
+
               <div class="captcha-display d-flex align-items-center justify-content-center" id="captchaDisplay"></div>
               <button type="button" class="refresh-btn" id="refreshCaptcha" title="Refresh Captcha">
                 <i class="fas fa-sync-alt"></i>
               </button>
+              <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter captcha"
+                required />
             </div>
             <!-- <div class="invalid-feedback">Please enter the correct captcha</div> -->
           </div>
-          
+
           <div class="d-grid gap-2">
             <button type="submit" class="btn btn-login" id="loginButton">
               <span id="loginText">Login</span>
@@ -339,7 +321,7 @@
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // DOM Elements
       const loginForm = document.getElementById('loginForm');
       const usernameInput = document.getElementById('username');
@@ -351,7 +333,7 @@
       const loginButton = document.getElementById('loginButton');
       const loginText = document.getElementById('loginText');
       const loginSpinner = document.getElementById('loginSpinner');
-      
+
       // Generate random captcha
       function generateCaptcha(length = 6) {
         const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -361,94 +343,94 @@
         }
         return result;
       }
-      
+
       // Current captcha
       let currentCaptcha = generateCaptcha();
       captchaDisplay.textContent = currentCaptcha;
-      
+
       // Refresh captcha
-      refreshCaptchaBtn.addEventListener('click', function() {
+      refreshCaptchaBtn.addEventListener('click', function () {
         currentCaptcha = generateCaptcha();
         captchaDisplay.textContent = currentCaptcha;
         captchaInput.value = '';
         captchaInput.classList.remove('is-invalid');
       });
-      
+
       // Toggle password visibility
-      togglePassword.addEventListener('click', function() {
+      togglePassword.addEventListener('click', function () {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         this.querySelector('i').classList.toggle('fa-eye-slash');
         this.querySelector('i').classList.toggle('fa-eye');
-        
+
       });
-      
+
       // Form validation
-      loginForm.addEventListener('submit', function(e) {
+      loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Reset validation
         loginForm.classList.remove('was-validated');
         usernameInput.classList.remove('is-invalid');
         passwordInput.classList.remove('is-invalid');
         captchaInput.classList.remove('is-invalid');
-        
+
         // Validate form
         let isValid = true;
-        
+
         if (!usernameInput.value.trim()) {
           usernameInput.classList.add('is-invalid');
           isValid = false;
         }
-        
+
         if (!passwordInput.value.trim()) {
           passwordInput.classList.add('is-invalid');
           isValid = false;
         }
-        
+
         if (captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) {
           captchaInput.classList.add('is-invalid');
           isValid = false;
         }
-        
+
         if (!isValid) {
           loginForm.classList.add('was-validated');
           return;
         }
-        
+
         // Simulate login process
         simulateLogin();
       });
-      
+
       // Simulate login (replace with actual AJAX call)
       function simulateLogin() {
         // Show loading state
         loginText.style.display = 'none';
         loginSpinner.style.display = 'inline-block';
         loginButton.disabled = true;
-        
+
         // Simulate API call delay
-        setTimeout(function() {
+        setTimeout(function () {
           // Hide loading state
           loginText.style.display = 'inline-block';
           loginSpinner.style.display = 'none';
           loginButton.disabled = false;
-          
+
           // Show success (in a real app, redirect or handle response)
           alert('Login successful! Welcome, ' + usernameInput.value.trim());
-          
+
           // Reset form and generate new captcha
           loginForm.reset();
           currentCaptcha = generateCaptcha();
           captchaDisplay.textContent = currentCaptcha;
         }, 1500);
       }
-      
+
       // Input validation on blur
       usernameInput.addEventListener('blur', validateUsername);
       passwordInput.addEventListener('blur', validatePassword);
       captchaInput.addEventListener('blur', validateCaptcha);
-      
+
       function validateUsername() {
         if (!usernameInput.value.trim()) {
           usernameInput.classList.add('is-invalid');
@@ -456,7 +438,7 @@
           usernameInput.classList.remove('is-invalid');
         }
       }
-      
+
       function validatePassword() {
         if (!passwordInput.value.trim()) {
           passwordInput.classList.add('is-invalid');
@@ -464,7 +446,7 @@
           passwordInput.classList.remove('is-invalid');
         }
       }
-      
+
       function validateCaptcha() {
         if (captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) {
           captchaInput.classList.add('is-invalid');
@@ -474,7 +456,8 @@
       }
     });
   </script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
