@@ -668,6 +668,23 @@ function contentUpdated() {
 }
 */
 
+// Initialize Bootstrap dropdowns
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+    return new bootstrap.Dropdown(dropdownToggleEl)
+});
+
+// Handle submenu hover
+document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
+    element.addEventListener('mouseenter', function (e) {
+        var submenu = this.nextElementSibling;
+        submenu.style.display = 'block';
+    });
+    element.parentElement.addEventListener('mouseleave', function (e) {
+        var submenu = this.querySelector('.dropdown-menu');
+        submenu.style.display = 'none';
+    });
+});
 
 
-    
+

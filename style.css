@@ -1492,3 +1492,19 @@ select {
 #beneficiariesCard {
     background: linear-gradient(135deg, #FF9800, #E65100);
 }
+
+/* Style for nested dropdown menus */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Show nested dropdown on hover */
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
