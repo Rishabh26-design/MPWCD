@@ -128,7 +128,7 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="schemesDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                                data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 <i class="fas fa-project-diagram me-1"></i>
                                 <span lang="en">Schemes</span>
                                 <span lang="hi">योजनाएं</span>
@@ -136,11 +136,12 @@
                             <ul class="dropdown-menu" aria-labelledby="schemesDropdown">
                                 <!-- Central Government Schemes Submenu -->
                                 <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">
+                                    <a class="dropdown-item dropdown-toggle" href="#" tabindex="0" aria-haspopup="true"
+                                        aria-expanded="false">
                                         <span lang="en">Central Government Schemes</span>
                                         <span lang="hi">केंद्र सरकार योजनाएं</span>
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" aria-label="submenu">
                                         <li>
                                             <h6 class="dropdown-header text-primary">
                                                 <span lang="en">Women Welfare</span>
@@ -159,11 +160,9 @@
                                                 <span lang="en">Ujjwala Yojana</span>
                                                 <span lang="hi">उज्ज्वला योजना</span>
                                             </a></li>
-
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-
                                         <li>
                                             <h6 class="dropdown-header text-primary">
                                                 <span lang="en">Child Development</span>
@@ -180,14 +179,14 @@
                                             </a></li>
                                     </ul>
                                 </li>
-
                                 <!-- State Government Schemes Submenu -->
                                 <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">
+                                    <a class="dropdown-item dropdown-toggle" href="#" tabindex="0" aria-haspopup="true"
+                                        aria-expanded="false">
                                         <span lang="en">State Government Schemes</span>
                                         <span lang="hi">राज्य सरकार योजनाएं</span>
                                     </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" aria-label="submenu">
                                         <li>
                                             <h6 class="dropdown-header text-primary">
                                                 <span lang="en">Women Welfare</span>
@@ -202,11 +201,9 @@
                                                 <span lang="en">Mukhyamantri Kanya Vivah/Nikah Yojana</span>
                                                 <span lang="hi">मुख्यमंत्री कन्या विवाह/निकाह योजना</span>
                                             </a></li>
-
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-
                                         <li>
                                             <h6 class="dropdown-header text-primary">
                                                 <span lang="en">Child Development</span>
@@ -2200,7 +2197,7 @@
                     </h4>
                     <div class="container pt-3 rounded">
                         <div class="row">
-                            <div class="col-md-12 p-4" style="background-color: rgb(238, 236, 249); height: 525px;">
+                            <div class="col-md-12 p-4" style="background-color: rgb(238, 236, 249); height: auto;">
                                 <div class="row mb-4">
                                     <div class="col-md-4">
                                         <div class="btn-group w-100" role="group">

@@ -236,47 +236,84 @@ body.hindi-active [lang="hi"] {
         width: 100%;
         margin-top: 0;
         border: none;
-        background-color: rgb(255, 255, 255);
+        background-color: transparent;
     }
 
     .dropdown-item {
-        padding-left: 2rem !important;
+        padding-left: 1rem !important;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        padding-left: 2rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        display: none;
+        /* Ensure submenus are hidden until toggled */
+    }
+
+    .dropdown-submenu .dropdown-menu.show {
+        display: block;
+        /* Show submenu when toggled on mobile */
     }
 
     .dropdown-toggle::after {
         float: right;
-        margin-top: 0.5rem;
+        margin-top: 0.6rem;
     }
+
+    .text-primary{
+        color: #a6c8e8 !important;
+    }
+
+     .dropdown-item {
+        color: rgb(167, 167, 167) !important;
+    }
+
 }
 
 /* Desktop hover dropdown */
 @media (min-width: 992px) {
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover>.dropdown-menu {
         display: block;
+        /* Show main dropdown on hover */
         margin-top: 0;
     }
 
     .dropdown-menu {
         display: none;
+        /* Hidden by default */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+        /* Show submenu on hover */
+        margin-left: 0.5rem;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        /* Position submenus to the right */
+        display: none;
+        /* Hidden until parent is hovered */
     }
 
     .dropdown-toggle:focus+.dropdown-menu {
         display: block;
+        /* Support keyboard focus */
     }
 }
 
+/* Navbar item separators */
 .navbar-nav .nav-item:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.3);
-    /* padding-right: 8px;
-    margin-right: 7px; */
 }
 
-/* Optional: Adjust for mobile view */
+/* Mobile view adjustments */
 @media (max-width: 991.98px) {
     .navbar-nav .nav-item:not(:last-child) {
         border-right: none;
-        padding-right: 0;
-        margin-right: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding-bottom: 5px;
         margin-bottom: 5px;
@@ -1439,7 +1476,7 @@ form {
 }
 
 fieldset {
-    border: 2px solid #4CAF50;
+    border: 2px dashed #aaadaa;
     border-radius: 10px;
     padding: 8px 15px;
     background-color: #ffffff;
@@ -1529,7 +1566,7 @@ select {
     .card-title {
         margin-bottom: 0;
         background: transparent;
-        color: white;
+        color: rgb(0, 0, 0);
         padding: 0 10px;
     }
 }

@@ -669,22 +669,43 @@ function contentUpdated() {
 */
 
 // Initialize Bootstrap dropdowns
-var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-    return new bootstrap.Dropdown(dropdownToggleEl)
+document.querySelectorAll('.dropdown-toggle').forEach(function (element) {
+    new bootstrap.Dropdown(element);
 });
 
-// Handle submenu hover
-document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
-    element.addEventListener('mouseenter', function (e) {
-        var submenu = this.nextElementSibling;
-        submenu.style.display = 'block';
+// Handle submenu toggling for mobile and hover for desktop
+document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach(function (element) {
+    // Mobile click handling
+    element.addEventListener('click', function (e) {
+        if (window.innerWidth <= 991.98) {
+            e.preventDefault();
+            e.stopPropagation();
+            const submenu = this.nextElementSibling;
+            submenu.classList.toggle('show');
+        }
     });
-    element.parentElement.addEventListener('mouseleave', function (e) {
-        var submenu = this.querySelector('.dropdown-menu');
-        submenu.style.display = 'none';
+
+    // Desktop hover handling
+    element.parentElement.addEventListener('mouseenter', function () {
+        if (window.innerWidth > 991.98) {
+            const submenu = this.querySelector('.dropdown-menu');
+            submenu.classList.add('show');
+        }
+    });
+
+    element.parentElement.addEventListener('mouseleave', function () {
+        if (window.innerWidth > 991.98) {
+            const submenu = this.querySelector('.dropdown-menu');
+            submenu.classList.remove('show');
+        }
     });
 });
 
-
-
+// Close submenus when clicking outside on mobile
+document.addEventListener('click', function (e) {
+    if (window.innerWidth <= 991.98 && !e.target.closest('.dropdown-submenu')) {
+        document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(function (submenu) {
+            submenu.classList.remove('show');
+        });
+    }
+});
