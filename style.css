@@ -223,6 +223,12 @@ body.hindi-active [lang="hi"] {
     right: 1rem;
 }
 
+  .dropdown-item:hover {
+        background-color: rgb(78 39 116) !important;
+        color:white !important;
+    }
+
+
 /* Responsive dropdown fixes */
 @media (max-width: 991.98px) {
     .navbar-collapse {
@@ -251,6 +257,7 @@ body.hindi-active [lang="hi"] {
         /* Ensure submenus are hidden until toggled */
     }
 
+  
     .dropdown-submenu .dropdown-menu.show {
         display: block;
         /* Show submenu when toggled on mobile */
@@ -288,7 +295,7 @@ body.hindi-active [lang="hi"] {
     .dropdown-submenu:hover>.dropdown-menu {
         display: block;
         /* Show submenu on hover */
-        margin-left: 0.5rem;
+        margin-left: 0rem;
     }
 
     .dropdown-submenu .dropdown-menu {
@@ -758,7 +765,7 @@ h1 {
 }
 
 .card:hover {
-    transform: translateX(5px);
+    /* transform: translateX(5px); */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
