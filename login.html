@@ -23,7 +23,7 @@
       background-position: center;
       min-height: 100vh;
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      
+
     }
 
     .login-card {
@@ -33,7 +33,7 @@
       background-color: #ffffffaf;
       overflow: hidden;
       transition: all 0.3s ease;
- 
+
 
     }
 
@@ -46,7 +46,7 @@
       color: white;
       padding: 1.5rem;
       text-align: center;
-      
+
     }
 
     .login-header h1 {
@@ -65,7 +65,7 @@
 
     .login-body {
       padding: 2rem;
-      
+
     }
 
     .form-control:focus {
@@ -73,9 +73,11 @@
       border-color: var(--primary-color);
     }
 
+    /* Keep your existing .btn-login styles */
     .btn-login {
       background-color: var(--primary-color);
       color: white;
+      width: 80%;
       font-weight: 600;
       padding: 0.5rem 1rem;
       border-radius: 50px;
@@ -88,6 +90,45 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(30, 30, 168, 0.2);
       color: white;
+    }
+
+    /* Modified .btn-home styles for circular shape */
+    .btn-home {
+      background-color: var(--primary-color);
+      color: white;
+      width: 40px;
+      /* Fixed size for circle */
+      height: 40px;
+      /* Equal width and height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      /* Remove padding for true circle */
+      border-radius: 50%;
+      /* Ensure circular shape */
+      transition: all 0.3s ease;
+    }
+
+    .btn-home:hover {
+      background-color: rgb(57, 17, 97);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(30, 30, 168, 0.2);
+      color: white;
+    }
+
+    .btn-home .fas.fa-home {
+      font-size: 18px;
+      /* Adjust icon size */
+    }
+
+    /* Ensure buttons stay in one line */
+    .row.d-flex {
+      display: flex;
+      flex-wrap: nowrap;
+      /* Prevent wrapping */
+      gap: 10px;
+      /* Adjust spacing between buttons */
     }
 
     .captcha-container {
@@ -263,7 +304,7 @@
         </div>
         <h1>Women & Child Development Department</h1>
         <p>Government of Madhya Pradesh</p>
-      </header> 
+      </header>
 
       <div class="login-body">
         <form id="loginForm" autocomplete="off" novalidate>
@@ -307,7 +348,10 @@
             <!-- <div class="invalid-feedback">Please enter the correct captcha</div> -->
           </div>
 
-          <div class="d-grid gap-2">
+          <div class="row d-flex align-items-center justify-content-center gap-2">
+            <button type="button" class="btn btn-home rounded-circle" onclick="window.location.href='index.html'">
+              <i class="fas fa-home"></i>
+            </button>
             <button type="submit" class="btn btn-login" id="loginButton">
               <span id="loginText">Login</span>
               <span class="spinner-border spinner-border-sm" id="loginSpinner" role="status" aria-hidden="true"></span>
