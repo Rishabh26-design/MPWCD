@@ -358,11 +358,43 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
-    /* Gentle active/highlight state */
+    /* Enhanced highlight state with darker colors matching hover colors */
     .infographic-card.highlight {
       transform: translateY(-2px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Darker highlight backgrounds matching hover colors */
+    .infographic-card[data-index="1"].highlight { 
+      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
+    }
+    .infographic-card[data-index="2"].highlight { 
+      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
+    }
+    .infographic-card[data-index="3"].highlight { 
+      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
+    }
+    .infographic-card[data-index="4"].highlight { 
+      background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%); 
+    }
+    .infographic-card[data-index="5"].highlight { 
+      background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); 
+    }
+    .infographic-card[data-index="6"].highlight { 
+      background: linear-gradient(145deg, #fecaca 0%, #fca5a5 100%); 
+    }
+    .infographic-card[data-index="7"].highlight { 
+      background: linear-gradient(145deg, #fce7f3 0%, #fbcfe8 100%); 
+    }
+    .infographic-card[data-index="8"].highlight { 
+      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
+    }
+    .infographic-card[data-index="9"].highlight { 
+      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
+    }
+    .infographic-card[data-index="10"].highlight { 
+      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
     }
 
     .infographic-card.highlight .card-icon {
@@ -382,6 +414,7 @@
       transition: all 0.8s ease;
     }
 
+    /* Enhanced shine effect for highlighted cards */
     .infographic-card.highlight::before {
       left: 100%;
     }
@@ -786,7 +819,7 @@
 
       // Start animation
       highlightCard();
-      setInterval(highlightCard, 3000); // Slower transition - every 3 seconds
+      setInterval(highlightCard, 1200); // Slower transition - every 3 seconds
 
       // Gentle click interaction
       cards.forEach(card => {
@@ -799,7 +832,7 @@
           setTimeout(() => {
             currentIndex = Array.from(cards).indexOf(this) + 1;
             if (currentIndex >= cards.length) currentIndex = 0;
-          }, 1500);
+          }, 800);
         });
       });
     });
