@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- required for mobile responsiveness -->
   <title>Login - Women & Child Development Department</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap utilities used below -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
@@ -26,6 +27,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       display: flex;
@@ -33,23 +35,65 @@
       justify-content: center;
       padding: 1.5rem;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.274);
+      z-index: -1;
     }
 
     .main-container {
       display: flex;
-      gap: 2.5rem;
-      max-width: 1400px;
+      gap: 4rem;
+      max-width: 1280px;
       width: 100%;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
-      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Left grows; permits bigger image */
+    .left-image-section {
+      flex: 1 1 680px;
+      max-width: 760px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-image {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .left-image:hover {
+      transform: scale(1.02);
+    }
+
+    /* Right fixed width on desktop */
+    .right-login-section {
+      flex: 0 0 350px;
+      max-width: 350px;
+      min-width: 0;
+      /* allow shrink in flex contexts to prevent overflow  */
+
     }
 
     .login-card {
-      max-width: 420px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      background-color: #ffffffe3;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      background-color: #ffffff;
       overflow: hidden;
       transition: all 0.3s ease;
     }
@@ -61,25 +105,25 @@
       background-repeat: no-repeat;
       background-position: center;
       color: white;
-      padding: 1.5rem;
+      padding: 1.2rem;
       text-align: center;
     }
 
     .login-header h1 {
       font-weight: 700;
-      font-size: 1.35rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
       text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.6);
     }
 
     .login-header p {
-      font-size: 1rem;
+      font-size: 0.9rem;
       opacity: 0.9;
       margin-bottom: 0;
     }
 
     .login-body {
-      padding: 2rem;
+      padding: 1.5rem;
     }
 
     .form-control:focus {
@@ -90,12 +134,13 @@
     .btn-login {
       background-color: var(--login-primary-color);
       color: white;
-      width: 80%;
+      width: 75%;
       font-weight: 600;
-      padding: 0.5rem 1rem;
+      padding: 0.45rem 0.9rem;
       border-radius: 50px;
       transition: all 0.3s ease;
       letter-spacing: 0.5px;
+      font-size: 0.9rem;
     }
 
     .btn-login:hover {
@@ -108,8 +153,8 @@
     .btn-home {
       background-color: var(--login-primary-color);
       color: white;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -126,31 +171,32 @@
     }
 
     .btn-home .fas.fa-home {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .row.d-flex {
       display: flex;
       flex-wrap: nowrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .captcha-container {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
     .captcha-display {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       border: 1px dashed #adb5bd;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
       font-family: 'Courier New', monospace;
       font-weight: 800;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       user-select: none;
       color: var(--login-primary-color);
+      font-size: 0.9rem;
     }
 
     .refresh-btn {
@@ -159,6 +205,7 @@
       color: #6c757d;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .refresh-btn:hover {
@@ -169,13 +216,13 @@
     .logo-container {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
     }
 
     .logo {
-      width: 75px;
-      height: 75px;
+      width: 65px;
+      height: 65px;
       object-fit: contain;
     }
 
@@ -190,344 +237,92 @@
     }
 
     .form-control {
-      padding: 0.7rem 0.75rem !important;
+      padding: 0.6rem 0.65rem !important;
+      font-size: 0.9rem;
     }
 
-    /* Smaller Infographic Cards */
-    .infographic-column {
-      max-width: 210px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 3.5rem;
+    .form-label {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
     }
 
-    .infographic-card {
-      position: relative;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-      font-size: 0.8rem;
-      color: #2d3748;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      width: 100%;
-      min-height: 80px;
-      overflow: hidden;
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    .input-group-text {
+      font-size: 0.9rem;
     }
 
-    /* Light colored backgrounds with gradients */
-    .infographic-card[data-index="1"] { 
-      background: linear-gradient(145deg, #f0f4ff 0%, #e0ecff 100%); 
-      border-left: 4px solid #6366f1; 
-    }
-    .infographic-card[data-index="2"] { 
-      background: linear-gradient(145deg, #f5f3ff 0%, #ede9fe 100%); 
-      border-left: 4px solid #8b5cf6; 
-    }
-    .infographic-card[data-index="3"] { 
-      background: linear-gradient(145deg, #ecfeff 0%, #cffafe 100%); 
-      border-left: 4px solid #06b6d4; 
-    }
-    .infographic-card[data-index="4"] { 
-      background: linear-gradient(145deg, #ecfdf5 0%, #d1fae5 100%); 
-      border-left: 4px solid #10b981; 
-    }
-    .infographic-card[data-index="5"] { 
-      background: linear-gradient(145deg, #fffbeb 0%, #fef3c7 100%); 
-      border-left: 4px solid #f59e0b; 
-    }
-    .infographic-card[data-index="6"] { 
-      background: linear-gradient(145deg, #fef2f2 0%, #fecaca 100%); 
-      border-left: 4px solid #ef4444; 
-    }
-    .infographic-card[data-index="7"] { 
-      background: linear-gradient(145deg, #fdf2f8 0%, #fce7f3 100%); 
-      border-left: 4px solid #ec4899; 
-    }
-    .infographic-card[data-index="8"] { 
-      background: linear-gradient(145deg, #f0f4ff 0%, #e0ecff 100%); 
-      border-left: 4px solid #6366f1; 
-    }
-    .infographic-card[data-index="9"] { 
-      background: linear-gradient(145deg, #f5f3ff 0%, #ede9fe 100%); 
-      border-left: 4px solid #8b5cf6; 
-    }
-    .infographic-card[data-index="10"] { 
-      background: linear-gradient(145deg, #ecfeff 0%, #cffafe 100%); 
-      border-left: 4px solid #06b6d4; 
+    .mb-3 {
+      margin-bottom: 0.8rem !important;
     }
 
-    /* Icon styling with matching colors - smaller icons */
-    .infographic-card[data-index="1"] .card-icon { 
-      background: linear-gradient(145deg, #6366f1, #4f46e5); 
-    }
-    .infographic-card[data-index="2"] .card-icon { 
-      background: linear-gradient(145deg, #8b5cf6, #7c3aed); 
-    }
-    .infographic-card[data-index="3"] .card-icon { 
-      background: linear-gradient(145deg, #06b6d4, #0891b2); 
-    }
-    .infographic-card[data-index="4"] .card-icon { 
-      background: linear-gradient(145deg, #10b981, #059669); 
-    }
-    .infographic-card[data-index="5"] .card-icon { 
-      background: linear-gradient(145deg, #f59e0b, #d97706); 
-    }
-    .infographic-card[data-index="6"] .card-icon { 
-      background: linear-gradient(145deg, #ef4444, #dc2626); 
-    }
-    .infographic-card[data-index="7"] .card-icon { 
-      background: linear-gradient(145deg, #ec4899, #db2777); 
-    }
-    .infographic-card[data-index="8"] .card-icon { 
-      background: linear-gradient(145deg, #6366f1, #4f46e5); 
-    }
-    .infographic-card[data-index="9"] .card-icon { 
-      background: linear-gradient(145deg, #8b5cf6, #7c3aed); 
-    }
-    .infographic-card[data-index="10"] .card-icon { 
-      background: linear-gradient(145deg, #06b6d4, #0891b2); 
+    /* Responsive: adjust sizes on medium screens */
+    @media (max-width:1024px) {
+      .main-container {
+        gap: 2rem;
+      }
+
+      .left-image-section {
+        flex: 1 1 560px;
+        max-width: 600px;
+      }
+
+      .left-image {
+        max-width: 600px;
+      }
+
+      .right-login-section {
+        flex: 0 0 320px;
+        max-width: 320px;
+      }
     }
 
-    .infographic-card .card-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      color: white;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
+    /* Mobile stacking and centering */
+    @media (max-width:768px) {
 
-    /* Text styling - smaller text */
-    .infographic-card .card-text {
-      flex: 1;
-      font-weight: 500;
-      line-height: 1.3;
-      font-size: 0.75rem;
-      letter-spacing: 0.1px;
-    }
+      /* Center the whole layout on mobile using flexbox  */
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
 
-    /* Light hover effects */
-    .infographic-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    .infographic-card[data-index="1"]:hover { 
-      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
-    }
-    .infographic-card[data-index="2"]:hover { 
-      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
-    }
-    .infographic-card[data-index="3"]:hover { 
-      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
-    }
-    .infographic-card[data-index="4"]:hover { 
-      background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%); 
-    }
-    .infographic-card[data-index="5"]:hover { 
-      background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); 
-    }
-    .infographic-card[data-index="6"]:hover { 
-      background: linear-gradient(145deg, #fecaca 0%, #fca5a5 100%); 
-    }
-    .infographic-card[data-index="7"]:hover { 
-      background: linear-gradient(145deg, #fce7f3 0%, #fbcfe8 100%); 
-    }
-    .infographic-card[data-index="8"]:hover { 
-      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
-    }
-    .infographic-card[data-index="9"]:hover { 
-      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
-    }
-    .infographic-card[data-index="10"]:hover { 
-      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
-    }
-
-    .infographic-card:hover .card-icon {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Enhanced highlight state with darker colors matching hover colors */
-    .infographic-card.highlight {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-
-    /* Darker highlight backgrounds matching hover colors */
-    .infographic-card[data-index="1"].highlight { 
-      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
-    }
-    .infographic-card[data-index="2"].highlight { 
-      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
-    }
-    .infographic-card[data-index="3"].highlight { 
-      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
-    }
-    .infographic-card[data-index="4"].highlight { 
-      background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%); 
-    }
-    .infographic-card[data-index="5"].highlight { 
-      background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); 
-    }
-    .infographic-card[data-index="6"].highlight { 
-      background: linear-gradient(145deg, #fecaca 0%, #fca5a5 100%); 
-    }
-    .infographic-card[data-index="7"].highlight { 
-      background: linear-gradient(145deg, #fce7f3 0%, #fbcfe8 100%); 
-    }
-    .infographic-card[data-index="8"].highlight { 
-      background: linear-gradient(145deg, #e0ecff 0%, #c7d2fe 100%); 
-    }
-    .infographic-card[data-index="9"].highlight { 
-      background: linear-gradient(145deg, #ede9fe 0%, #ddd6fe 100%); 
-    }
-    .infographic-card[data-index="10"].highlight { 
-      background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%); 
-    }
-
-    .infographic-card.highlight .card-icon {
-      transform: scale(1.08);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Gentle shine effect */
-    .infographic-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: all 0.8s ease;
-    }
-
-    /* Enhanced shine effect for highlighted cards */
-    .infographic-card.highlight::before {
-      left: 100%;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1200px) {
       .main-container {
         flex-direction: column;
-        align-items: center;
-        gap: 1.2rem;
-      }
-
-      .infographic-column {
-        max-width: 350px;
+        gap: 2rem;
+        max-width: 100%;
         width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding-inline: 1rem;
       }
 
-      .infographic-card {
-        flex: 1 1 calc(50% - 0.5rem);
-        min-width: 240px;
-      }
-
-      .login-card {
+      .left-image-section {
         order: 1;
+        max-width: 400px;
       }
 
-      .infographic-column.left {
+      .left-image {
+        max-width: 400px;
+      }
+
+      .right-login-section {
         order: 2;
+        flex: 1 1 100%;
+        /* take full width on mobile  */
+        max-width: 520px;
+        /* center cap; adjust/remove as needed  */
+        width: 100%;
+        margin-inline: auto;
+        /* center horizontally */
+        min-width: 0;
+        /* avoid overflow in flex  */
+
       }
 
-      .infographic-column.right {
-        order: 3;
-      }
-
-      .infographic-card {
-        display: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .infographic-card {
-        font-size: 0.75rem;
-        padding: 0.8rem;
-        min-height: 70px;
-        gap: 0.6rem;
-      }
-
-      .infographic-card .card-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-      }
-
-      .infographic-card .card-text {
-        font-size: 0.7rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .infographic-column {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .infographic-card {
-        flex: none;
-        min-width: auto;
-        padding: 0.7rem;
-        min-height: 65px;
-        gap: 0.5rem;
-      }
-
-      .infographic-card .card-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 0.8rem;
-      }
-
-      .infographic-card .card-text {
-        font-size: 0.65rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .infographic-card {
-        padding: 0.6rem;
-        min-height: 60px;
-      }
-
-      .infographic-card .card-icon {
-        width: 28px;
-        height: 28px;
-        font-size: 0.75rem;
-      }
-
-      .infographic-card .card-text {
-        font-size: 0.6rem;
-      }
-    }
-
-    /* Login form responsive styles */
-    @media (max-width: 768px) {
       .login-card {
-        margin: 0 1rem;
-        max-width: 95%;
+        margin: 0 0;
       }
 
       .login-body {
-        padding: 1.5rem;
+        padding: 1.25rem;
       }
 
       .login-header {
@@ -535,51 +330,77 @@
       }
 
       .login-header h1 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .login-header p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       .logo {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
       }
     }
 
-    @media (max-width: 576px) {
+    @media (max-width:576px) {
+      body {
+        padding: 0.75rem;
+      }
+
+      /* tighter padding for small phones */
+      .main-container {
+        padding: 1rem;
+        gap: 1.5rem;
+      }
+
+      .left-image-section {
+        max-width: 340px;
+      }
+
+      .left-image {
+        max-width: 340px;
+      }
+
       .login-header {
         padding: 0.75rem;
       }
 
       .login-header h1 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 0.1rem;
       }
 
       .login-header p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
       }
 
       .logo {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
       }
 
       .login-body {
-        padding: 1.25rem;
+        padding: 1rem;
       }
 
       .btn-login {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width:400px) {
+      .left-image-section {
+        max-width: 300px;
+      }
+
+      .left-image {
+        max-width: 280px;
+      }
+
       .login-header h1 {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
 
       .login-header p {
@@ -597,250 +418,86 @@
       }
 
       .captcha-display {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Absolute smallest devices: hard-hide left image as a fallback */
+    @media (max-width:320px) {
+      .left-image-section {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="main-container">
-    <div class="infographic-column left">
-      <div class="infographic-card" data-index="1">
-        <div class="card-icon">
-          <i class="fas fa-database"></i>
-        </div>
-        <span class="card-text">Master Directories</span>
-      </div>
-      <div class="infographic-card" data-index="2">
-        <div class="card-icon">
-          <i class="fas fa-users"></i>
-        </div>
-        <span class="card-text">Unified Beneficiary & Household Management</span>
-      </div>
-      <div class="infographic-card" data-index="3">
-        <div class="card-icon">
-          <i class="fas fa-hand-holding-heart"></i>
-        </div>
-        <span class="card-text">Scheme & DBT Management</span>
-      </div>
-      <div class="infographic-card" data-index="4">
-        <div class="card-icon">
-          <i class="fas fa-child"></i>
-        </div>
-        <span class="card-text">ICDS & Saksham Anganwadi Management</span>
-      </div>
-      <div class="infographic-card" data-index="5">
-        <div class="card-icon">
-          <i class="fas fa-briefcase"></i>
-        </div>
-        <span class="card-text">Case & Service Management</span>
-      </div>
+  <main class="main-container"> <!-- Left Image Section: hidden on xs/sm, visible md+ via Bootstrap utility -->
+    <div class="left-image-section d-none d-md-block"> <!-- hide < md, show >= md --> <img
+        src="asset/WCD_Left_Image.png" alt="Women & Child Development Illustration" class="left-image img-fluid" />
     </div>
 
-    <div class="login-card">
-      <header class="login-header">
-        <div class="logo-container">
-          <img src="asset/MP_LOGO.png" alt="Government of Madhya Pradesh" class="logo" />
-          <img src="asset/WCD_LOGO.png" alt="Women & Child Development Department Logo" class="logo" />
-        </div>
-        <h1>Women & Child Development Department</h1>
-        <p>Government of Madhya Pradesh</p>
-      </header>
-
-      <div class="login-body">
-        <form id="loginForm" autocomplete="off" novalidate>
-          <div class="mb-3">
-            <label for="username" class="form-label fw-semibold">Username</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-              <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
-                required />
-            </div>
+    <!-- Right Login Section (responsive and centered on mobile) -->
+    <div class="right-login-section">
+      <div class="login-card">
+        <header class="login-header">
+          <div class="logo-container">
+            <img src="asset/MP_LOGO.png" alt="Government of Madhya Pradesh" class="logo" />
+            <img src="asset/WCD_LOGO.png" alt="Women & Child Development Department Logo" class="logo" />
           </div>
+          <h1>Women & Child Development Department</h1>
+          <p>Government of Madhya Pradesh</p>
+        </header>
 
-          <div class="mb-3">
-            <label for="password" class="form-label fw-semibold">Password</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-lock"></i></span>
-              <input type="password" class="form-control" id="password" name="password"
-                placeholder="Enter your password" required />
-              <span class="input-group-text password-toggle" id="togglePassword">
-                <i class="fas fa-eye"></i>
-              </span>
+        <div class="login-body">
+          <form id="loginForm" autocomplete="off" novalidate>
+            <div class="mb-3">
+              <label for="username" class="form-label fw-semibold">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                  required />
+              </div>
             </div>
-          </div>
 
-          <div class="mb-3">
-            <div class="d-flex align-items-center gap-2">
-              <div class="captcha-display d-flex align-items-center justify-content-center" id="captchaDisplay"></div>
-              <button type="button" class="refresh-btn fw-semibold" id="refreshCaptcha" title="Refresh Captcha">
-                <i class="fas fa-sync-alt"></i>
+            <div class="mb-3">
+              <label for="password" class="form-label fw-semibold">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" name="password"
+                  placeholder="Enter your password" required />
+                <span class="input-group-text password-toggle" id="togglePassword">
+                  <i class="fas fa-eye"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex align-items-center gap-2">
+                <div class="captcha-display d-flex align-items-center justify-content-center" id="captchaDisplay"></div>
+                <button type="button" class="refresh-btn fw-semibold" id="refreshCaptcha" title="Refresh Captcha">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter captcha"
+                  required />
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center gap-2">
+              <button type="button" class="btn btn-home rounded-circle" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i>
               </button>
-              <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter captcha" required />
+              <button type="submit" class="btn btn-login" id="loginButton">Login</button>
             </div>
-          </div>
-
-          <div class="row d-flex align-items-center justify-content-center gap-2">
-            <button type="button" class="btn btn-home rounded-circle" onclick="window.location.href='index.html'">
-              <i class="fas fa-home"></i>
-            </button>
-            <button type="submit" class="btn btn-login" id="loginButton">
-              Login
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="infographic-column right">
-      <div class="infographic-card" data-index="6">
-        <div class="card-icon">
-          <i class="fas fa-building"></i>
+          </form>
         </div>
-        <span class="card-text">Institution & Non-Institution Management</span>
-      </div>
-      <div class="infographic-card" data-index="7">
-        <div class="card-icon">
-          <i class="fas fa-chalkboard-teacher"></i>
-        </div>
-        <span class="card-text">Training & Skill Management</span>
-      </div>
-      <div class="infographic-card" data-index="8">
-        <div class="card-icon">
-          <i class="fas fa-user-tie"></i>
-        </div>
-        <span class="card-text">HR & Payroll Management</span>
-      </div>
-      <div class="infographic-card" data-index="9">
-        <div class="card-icon">
-          <i class="fas fa-wallet"></i>
-        </div>
-        <span class="card-text">Finance & Budget Management</span>
-      </div>
-      <div class="infographic-card" data-index="10">
-        <div class="card-icon">
-          <i class="fas fa-info-circle"></i>
-        </div>
-        <span class="card-text">RTI Management</span>
       </div>
     </div>
   </main>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loginForm = document.getElementById('loginForm');
-      const usernameInput = document.getElementById('username');
-      const passwordInput = document.getElementById('password');
-      const togglePassword = document.getElementById('togglePassword');
-      const captchaInput = document.getElementById('captcha');
-      const captchaDisplay = document.getElementById('captchaDisplay');
-      const refreshCaptchaBtn = document.getElementById('refreshCaptcha');
-
-      // Generate random captcha
-      function generateCaptcha(length = 6) {
-        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-          result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
-      }
-
-      // Current captcha
-      let currentCaptcha = generateCaptcha();
-      captchaDisplay.textContent = currentCaptcha;
-
-      // Refresh captcha
-      refreshCaptchaBtn.addEventListener('click', function () {
-        currentCaptcha = generateCaptcha();
-        captchaDisplay.textContent = currentCaptcha;
-        captchaInput.value = '';
-        captchaInput.classList.remove('is-invalid');
-      });
-
-      // Toggle password visibility
-      togglePassword.addEventListener('click', function () {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        this.querySelector('i').classList.toggle('fa-eye-slash');
-        this.querySelector('i').classList.toggle('fa-eye');
-      });
-
-      // Form validation
-      loginForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Reset validation
-        usernameInput.classList.remove('is-invalid');
-        passwordInput.classList.remove('is-invalid');
-        captchaInput.classList.remove('is-invalid');
-
-        let isValid = true;
-
-        if (!usernameInput.value.trim()) {
-          usernameInput.classList.add('is-invalid');
-          isValid = false;
-        }
-
-        if (!passwordInput.value.trim()) {
-          passwordInput.classList.add('is-invalid');
-          isValid = false;
-        }
-
-        if (captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) {
-          captchaInput.classList.add('is-invalid');
-          isValid = false;
-        }
-
-        if (!isValid) return;
-
-        // Direct redirect without loader/spinner
-        window.location.href = "https://wcd-static.tserver.co.in/";
-      });
-
-      // Smooth and subtle highlight animation for infographic cards
-      const cards = document.querySelectorAll('.infographic-card');
-      let currentIndex = 0;
-
-      function highlightCard() {
-        // Remove highlight from all cards smoothly
-        cards.forEach(card => {
-          card.classList.remove('highlight');
-        });
-        
-        // Add highlight to current card with smooth transition
-        setTimeout(() => {
-          if (cards[currentIndex]) {
-            cards[currentIndex].classList.add('highlight');
-            currentIndex = (currentIndex + 1) % cards.length;
-          }
-        }, 200); // Slightly longer delay for smoother transition
-      }
-
-      // Start animation
-      highlightCard();
-      setInterval(highlightCard, 1200); // Slower transition - every 3 seconds
-
-      // Gentle click interaction
-      cards.forEach(card => {
-        card.addEventListener('click', function() {
-          // Remove highlight from all cards
-          cards.forEach(c => c.classList.remove('highlight'));
-          // Add highlight to clicked card
-          this.classList.add('highlight');
-          // Reset the automatic cycling after a longer delay
-          setTimeout(() => {
-            currentIndex = Array.from(cards).indexOf(this) + 1;
-            if (currentIndex >= cards.length) currentIndex = 0;
-          }, 800);
-        });
-      });
-    });
-  </script>
-
+  <script> document.addEventListener('DOMContentLoaded', function () { const loginForm = document.getElementById('loginForm'); const usernameInput = document.getElementById('username'); const passwordInput = document.getElementById('password'); const togglePassword = document.getElementById('togglePassword'); const captchaInput = document.getElementById('captcha'); const captchaDisplay = document.getElementById('captchaDisplay'); const refreshCaptchaBtn = document.getElementById('refreshCaptcha'); function generateCaptcha(length = 6) { const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; let result = ''; for (let i = 0; i < length; i++) { result += chars.charAt(Math.floor(Math.random() * chars.length)); } return result; } let currentCaptcha = generateCaptcha(); captchaDisplay.textContent = currentCaptcha; refreshCaptchaBtn.addEventListener('click', function () { currentCaptcha = generateCaptcha(); captchaDisplay.textContent = currentCaptcha; captchaInput.value = ''; captchaInput.classList.remove('is-invalid'); }); togglePassword.addEventListener('click', function () { const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; passwordInput.setAttribute('type', type); this.querySelector('i').classList.toggle('fa-eye-slash'); this.querySelector('i').classList.toggle('fa-eye'); }); loginForm.addEventListener('submit', function (e) { e.preventDefault(); usernameInput.classList.remove('is-invalid'); passwordInput.classList.remove('is-invalid'); captchaInput.classList.remove('is-invalid'); let isValid = true; if (!usernameInput.value.trim()) { usernameInput.classList.add('is-invalid'); isValid = false; } if (!passwordInput.value.trim()) { passwordInput.classList.add('is-invalid'); isValid = false; } if (captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) { captchaInput.classList.add('is-invalid'); isValid = false; } if (!isValid) return; window.location.href = "https://wcd-static.tserver.co.in/"; }); }); </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap bundle -->
 </body>
 
 </html>
